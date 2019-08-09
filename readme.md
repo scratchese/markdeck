@@ -2,7 +2,7 @@
 💬 next-deck 💬
 </h1>
 <h4 align="center">
-Next.js inspired, zero configuration, markdown to presentation
+Next.js inspired, zero configuration, markdown to presentation without thinking
 </h4>
 
 ## Features
