@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-Inspired by Next.js, zero configuration, markdown to presentation without thinking
+Inspired by Next.js, zero configuration, markdown to presentation in less than a second
 </p>
 
 ## Demos
