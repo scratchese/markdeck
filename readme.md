@@ -11,6 +11,14 @@ Next.js inspired, zero configuration, markdown to presentation without thinking
 - blazing fast (less than 0.3s)
 - easy to create
 
+## Installation
+
+it's on [npm](https://www.npmjs.com/package/@amazingandyyy/next-deck)
+
+```
+$ npm i -g https://www.npmjs.com/package/@amazingandyyy/next-deck
+```
+
 ## Usage
 
 ### Create markdown under `/decks`
@@ -25,7 +33,7 @@ $ touch decks/wafflejs_speech_0904.md
 ### Export to `/docs`
 
 ```terminal
-$ npm i -g next-deck
+$ npm i -g @amazingandyyy/next-deck
 $ deck --help
 $ deck export
 ...
