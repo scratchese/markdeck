@@ -49,7 +49,9 @@ const exportHTML = ({transformedMarkdownName, outputPath, DEFAULT_THEME, markdow
       const outputHTMLPath = path.join(outputPath, `${fileName}`)
       console.log(`created ${outputHTMLPath}`)
       const file = new Printer(outputHTMLPath)
-      const currentSrcPath = `/deck/${transformedMarkdownName}`;
+      const currentPath = window.location.href.split('/')
+      currentPath.pop()
+      const currentSrcPath = currentPath.join('');
       file.print(`<html>
         <head>
           <meta charset="utf-8">
