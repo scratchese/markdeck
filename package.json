@@ -2,16 +2,6 @@
   "name": "@amazingandyyy/markdeck",
   "version": "0.0.3",
   "description": "Nextjs inspired, zero configuration, markdown to presentation.",
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "engineStrict": true,
-  "bin": {
-    "deck": "./lib/cli.js"
-  },
-  "files": [
-    "lib"
-  ],
   "scripts": {
     "test": "jest && npm run style",
     "test:watch": "jest --watchAll",
@@ -20,6 +10,15 @@
     "precommit": "npm test",
     "serve": "serve docs"
   },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "bin": {
+    "deck": "./lib/cli.js"
+  },
+  "files": [
+    "lib"
+  ],
   "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
   "license": "MIT",
   "repository": {
