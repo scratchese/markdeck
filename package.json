@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest && npm run style",
     "test:watch": "jest --watchAll",
-    "build": "babel src -d lib",
+    "build-by-makefile": "babel src -d lib",
     "style": "eslint --fix src/",
     "precommit": "npm test",
     "serve": "serve docs"
