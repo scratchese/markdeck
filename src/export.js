@@ -24,12 +24,12 @@ const exportPresentations = ({flags, srcMarkdown}) => {
     const outputPath = path.join(outputDeckPath, transformedMarkdownName);
     const templtPath = path.join(__dirname, 'templates')
     rmrf(outputDeckPath, () => {
-      execute(`mkdir -p ${outputPath}/nextdeck`, ()=>{
+      execute(`mkdir -p ${outputPath}/markdeck`, ()=>{
         console.log(`created ${outputPath}`)
-        execute(`cp -f ${templtPath}/themes/${DEFAULT_THEME}.css ${outputPath}/nextdeck/`, ()=>{
-          console.log(`created ${outputPath}/nextdeck/${DEFAULT_THEME}.css`)
-          execute(`cp -f ${templtPath}/nextdeck.js ${outputPath}/nextdeck/`, ()=>{
-            console.log(`created ${outputPath}/nextdeck/nextdeck.js`)
+        execute(`cp -f ${templtPath}/themes/${DEFAULT_THEME}.css ${outputPath}/markdeck/`, ()=>{
+          console.log(`created ${outputPath}/markdeck/${DEFAULT_THEME}.css`)
+          execute(`cp -f ${templtPath}/markdeck.js ${outputPath}/markdeck/`, ()=>{
+            console.log(`created ${outputPath}/markdeck/markdeck.js`)
             exportHTML({transformedMarkdownName, outputPath, DEFAULT_THEME, templtPath, markdown})
           })
         })
@@ -57,7 +57,7 @@ const exportHTML = ({transformedMarkdownName, outputPath, DEFAULT_THEME, markdow
           <meta property="og:image" content="">
           <meta property="og:site_name" content="">
           <title>Presentation | ${i}</title>
-          <link rel='stylesheet' type='text/css' href='nextdeck/${DEFAULT_THEME}.css'>
+          <link rel='stylesheet' type='text/css' href='markdeck/${DEFAULT_THEME}.css'>
           <script type="application/javascript">
             function toggleFullScreen() {
               if (!document.fullscreenElement) {
@@ -106,7 +106,7 @@ const exportHTML = ({transformedMarkdownName, outputPath, DEFAULT_THEME, markdow
   });
 }
 
-// const _src = '/Users/andy.chen/projects/nextdeck/demo/wafflejs_speech_0904.md';
+// const _src = '/Users/andy.chen/projects/markdeck/demo/wafflejs_speech_0904.md';
 // const _output = DEFAULT_OUTPUT_FOLDER
 // exportFnc({src: _src, output: _output})
 

@@ -23,6 +23,6 @@ switch (cli.input[0]) {
     exportFnc()
     break
   default:
-    console.log('https://www.npmjs.com/package/@amazingandyyy/next-deck')
+    console.log('https://www.npmjs.com/package/@amazingandyyy/markdeck')
     break
 }

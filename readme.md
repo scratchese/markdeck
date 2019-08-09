@@ -1,11 +1,11 @@
 <h1 align="center">
-💬 next-deck 💬
+💬 Markdeck 💬
 </h1>
 <h4 align="center">
 Next.js inspired, zero configuration, markdown to presentation without thinking
 </h4>
 
-Check [demo](https://www.amazingandyyy.com/next-deck/deck/wafflejs_speech_0904/), you can build this in less than 3 mins.
+Check [demo](https://www.amazingandyyy.com/markdeck/deck/wafflejs_speech_0904/), you can build this in less than 3 mins.
 
 ## Features
 
@@ -16,10 +16,10 @@ Check [demo](https://www.amazingandyyy.com/next-deck/deck/wafflejs_speech_0904/)
 
 ## Installation
 
-it's on [npm](https://www.npmjs.com/package/@amazingandyyy/next-deck)
+it's on [npm](https://www.npmjs.com/package/@amazingandyyy/markdeck)
 
 ```
-$ npm i -g @amazingandyyy/next-deck@latest
+$ npm i -g @amazingandyyy/markdeck@latest
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ $ touch decks/wafflejs_speech_0904.md
 ### Export to `/docs`
 
 ```terminal
-$ npm i -g @amazingandyyy/next-deck
+$ npm i -g @amazingandyyy/markdeck
 $ deck --help
 $ deck export
 ...
@@ -47,9 +47,9 @@ docs/
         ├── 1
         ├── 2
         ├── index.html
-        └── nextdeck
+        └── markdeck
             ├── basic.css
-            └── nextdeck.js
+            └── markdeck.js
 ...
 
 $ npm i -g serve
@@ -57,7 +57,7 @@ $ serve ./docs
 # http://localhost:5000/deck/wafflejs_speech_0904/ is on
 ```
 
-then you push to github and turn on **Github Pages**, supporting serving files from `/docs` folder, and the presentation is sharable :) see [demo](https://www.amazingandyyy.com/next-deck/deck/wafflejs_speech_0904/)
+then you push to github and turn on **Github Pages**, supporting serving files from `/docs` folder, and the presentation is sharable :) see [demo](https://www.amazingandyyy.com/markdeck/deck/wafflejs_speech_0904/)
 
 ### Support multiple markdowns under `/decks`
 
@@ -79,16 +79,16 @@ docs/
 │   │   ├── 3
 │   │   ├── 4
 │   │   ├── index.html
-│   │   └── nextdeck
+│   │   └── markdeck
 │   │       ├── basic.css
-│   │       └── nextdeck.js
+│   │       └── markdeck.js
 │   ├── wafflejs_speech_08_07
 │   │   ├── 1
 │   │   ├── 2
 │   │   ├── index.html
-│   │   └── nextdeck
+│   │   └── markdeck
 │   │       ├── basic.css
-│   │       └── nextdeck.js
+│   │       └── markdeck.js
 │   └── twilio_conference_08_07
 ...
 # done!
@@ -116,9 +116,9 @@ this project is generated from [amazingandyyy/modern-js-project](https://github.
 
 ## License
 
-[MIT](https://raw.githubusercontent.com/amazingandyyy/next-deck/master/license)
+[MIT](https://raw.githubusercontent.com/amazingandyyy/markdeck/master/license)
 
 ## Suggestions
 
-- [PR](https://github.com/amazingandyyy/next-deck/pulls) is highly welcome
-- feel free to open [issues](https://github.com/amazingandyyy/next-deck/issues) as many as possible, it doesn't need to be in details, just general idea is good enough.
+- [PR](https://github.com/amazingandyyy/markdeck/pulls) is highly welcome
+- feel free to open [issues](https://github.com/amazingandyyy/markdeck/issues) as many as possible, it doesn't need to be in details, just general idea is good enough.

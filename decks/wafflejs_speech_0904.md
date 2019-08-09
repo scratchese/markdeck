@@ -1,4 +1,4 @@
-# nextdeck
+# markdeck
 
 ## speed up your decks
 
@@ -40,7 +40,7 @@ I also mentor at Nodeschool SF/OAK
 
 # It's open source on the hub of git
 
-https://github.com/amazingandyyy/next-deck
+https://github.com/amazingandyyy/markdeck
 
 ------
 

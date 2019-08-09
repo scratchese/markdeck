@@ -8,7 +8,7 @@ build:
 	cp -rf $(SRC)/templates $(BUILD)
 
 install-local: build
-	$(NPM) rm -g next-deck && $(NPM) i -g
+	$(NPM) rm -g markdeck && $(NPM) i -g
 
 serve:
 	$(NPM) run serve
