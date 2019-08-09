@@ -44,14 +44,12 @@ const exportHTML = ({transformedMarkdownName, outputPath, DEFAULT_THEME, markdow
   fs.readFile(markdown, 'utf8', (err, data) => {
     const html = converter.makeHtml(data);
     const pages = html.split('<hr />')
+    const pageMax = pages.length;
     pages.forEach((content, i)=>{
       const fileName = (i==0)?'index.html':`${i}.html`;
       const outputHTMLPath = path.join(outputPath, `${fileName}`)
       console.log(`created ${outputHTMLPath}`)
       const file = new Printer(outputHTMLPath)
-      const currentPath = window.location.href.split('/')
-      currentPath.pop()
-      const currentSrcPath = currentPath.join('');
       file.print(`<html>
         <head>
           <meta charset="utf-8">
@@ -60,17 +58,47 @@ const exportHTML = ({transformedMarkdownName, outputPath, DEFAULT_THEME, markdow
           <meta property="og:site_name" content="">
           <title>Presentation | ${i}</title>
           <link rel='stylesheet' type='text/css' href='nextdeck/${DEFAULT_THEME}.css'>
+          <script type="application/javascript">
+            function toggleFullScreen() {
+              if (!document.fullscreenElement) {
+                  document.documentElement.requestFullscreen();
+              } else {
+                if (document.exitFullscreen) {
+                  document.exitFullscreen(); 
+                }
+              }
+            }
+            
+            const getCurrentPath = () => {
+              if(window.location){
+                const currentPath = window.location.href.split('/')
+                currentPath.pop()
+                const currentSrcPath = currentPath.join('/');
+                return currentSrcPath;
+              }
+            }
+            
+            function goBack(loc) {
+              console.log(loc);
+              const url = getCurrentPath()+"/"+loc;
+              window.location.href = url;
+            }
+            function goForward(loc) {
+              console.log(loc);
+              const url = getCurrentPath()+"/"+loc;
+              window.location.href = url;
+            }
+          </script>        
         </head>
         <body>
           <div id='displayer'>
             <div>${content}</div>
           </div>
           <div id='btn-container'>
-            <a class='btn' href='${currentSrcPath}/${(i-1<=0)?'index':i-1}.html'><<</a>
-            <a class='btn' href='${currentSrcPath}/${i+1}.html'>>></a>
+            <a class='btn' onclick='goBack("${(i-1<=0)?'index.html':(i-1).toString()+'.html'}")'><<</a>
+            <a class='btn' onclick='goForward("${((i+1)%pageMax==0)?'index.html':(i+1)%pageMax+'.html'}")'>>></a>
             <a class='btn' onclick='toggleFullScreen()'>full screen</a>
           </div>
-          <script type="application/javascript" src='${currentSrcPath}/nextdeck/nextdeck.js' />
         </body>
         </html>`)
       file.end()

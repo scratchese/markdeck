@@ -8,10 +8,11 @@ build:
 	cp -rf $(SRC)/templates $(BUILD)
 
 install-local: build
-	$(NPM) rm -g nextdeck && $(NPM) i -g
-
-dev:
-	$(NPM) run dev
+	$(NPM) rm -g next-deck && $(NPM) i -g
 
 serve:
 	$(NPM) run serve
+
+deploy:
+	$(NPM) run build
+	$(NPM) publish --access=public
