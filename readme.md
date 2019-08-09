@@ -5,6 +5,8 @@
 Next.js inspired, zero configuration, markdown to presentation without thinking
 </h4>
 
+Check [demo](https://www.amazingandyyy.com/next-deck/deck/wafflejs_speech_0904/), you can build this in less than 3 mins.
+
 ## Features
 
 - zero configuration, inspired by [zeit/next.js](https://github.com/zeit/next.js)
