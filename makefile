@@ -13,8 +13,7 @@ install-local: build
 serve:
 	$(NPM) run serve
 
-deploy:
-	$(NPM) run build
+deploy: build
 	$(NPM) publish --access=public
 
 .PHONY: build serve deploy

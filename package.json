@@ -1,6 +1,6 @@
 {
   "name": "@amazingandyyy/markdeck",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Nextjs inspired, zero configuration, markdown to presentation.",
   "scripts": {
     "test": "jest && npm run style",
