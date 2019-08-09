@@ -60,7 +60,7 @@ docs/
 
 $ npm i -g serve
 $ serve ./docs
-# http://localhost:5000/deck/wafflejs_speech_0904/ is on
+# http://localhost:5000/deck/wafflejs_speech_0904/ is alive
 ```
 
 then you push to github and turn on **Github Pages**, supporting serving files from `/docs` folder, and the presentation is sharable :) see [demo](https://www.amazingandyyy.com/markdeck/deck/wafflejs_speech_0904/)
