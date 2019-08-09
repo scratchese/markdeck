@@ -32,7 +32,7 @@ $ npm i -g @amazingandyyy/markdeck@latest
 ### Create markdown under `/decks`
 
 ```terminal
-$ mkir decks
+$ mkdir decks
 $ touch decks/wafflejs_speech_0904.md
 ```
 
