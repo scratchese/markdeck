@@ -48,6 +48,7 @@ const exportHTML = ({transformedMarkdownName, outputPath, DEFAULT_THEME, markdow
       const fileName = (i==0)?'index.html':i;
       const outputHTMLPath = path.join(outputPath, `${fileName}`)
       const file = new Printer(outputHTMLPath)
+      const currentSrcPath = `/deck/${transformedMarkdownName}`;
       file.print(`<html>
         <head>
           <meta charset="utf-8">
@@ -62,11 +63,11 @@ const exportHTML = ({transformedMarkdownName, outputPath, DEFAULT_THEME, markdow
             <div>${content}</div>
           </div>
           <div id='btn-container'>
-            <a class='btn' href='/deck/${transformedMarkdownName}/${(i-1<=0)?'index.html':i-1}'><<</a>
-            <a class='btn' href='/deck/${transformedMarkdownName}/${i+1}'>>></a>
+            <a class='btn' href='${currentSrcPath}/${(i-1<=0)?'index.html':i-1}'><<</a>
+            <a class='btn' href='${currentSrcPath}/${i+1}'>>></a>
             <a class='btn' onclick='toggleFullScreen()'>full screen</a>
           </div>
-          <script type="application/javascript" src='nextdeck/nextdeck.js' />
+          <script type="application/javascript" src='${currentSrcPath}/nextdeck/nextdeck.js' />
         </body>
         </html>`)
       file.end()
