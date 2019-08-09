@@ -45,8 +45,9 @@ const exportHTML = ({transformedMarkdownName, outputPath, DEFAULT_THEME, markdow
     const html = converter.makeHtml(data);
     const pages = html.split('<hr />')
     pages.forEach((content, i)=>{
-      const fileName = (i==0)?'index.html':i;
+      const fileName = (i==0)?'index.html':`${i}.html`;
       const outputHTMLPath = path.join(outputPath, `${fileName}`)
+      console.log(`created ${outputHTMLPath}`)
       const file = new Printer(outputHTMLPath)
       const currentSrcPath = `/deck/${transformedMarkdownName}`;
       file.print(`<html>
@@ -63,8 +64,8 @@ const exportHTML = ({transformedMarkdownName, outputPath, DEFAULT_THEME, markdow
             <div>${content}</div>
           </div>
           <div id='btn-container'>
-            <a class='btn' href='${currentSrcPath}/${(i-1<=0)?'index.html':i-1}'><<</a>
-            <a class='btn' href='${currentSrcPath}/${i+1}'>>></a>
+            <a class='btn' href='${currentSrcPath}/${(i-1<=0)?'index':i-1}.html'><<</a>
+            <a class='btn' href='${currentSrcPath}/${i+1}.html'>>></a>
             <a class='btn' onclick='toggleFullScreen()'>full screen</a>
           </div>
           <script type="application/javascript" src='${currentSrcPath}/nextdeck/nextdeck.js' />

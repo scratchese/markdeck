@@ -1,6 +1,6 @@
 {
   "name": "@amazingandyyy/next-deck",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Nextjs inspired, zero configuration, markdown to presentation.",
   "engines": {
     "node": ">=8.0.0"
