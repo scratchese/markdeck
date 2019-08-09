@@ -1,0 +1,36 @@
+{
+  "name": "nextdeck",
+  "version": "0.0.1",
+  "description": "Nextjs inspired, zero configuration, markdown to presentation.",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "engineStrict": true,
+  "bin": {
+    "deck": "./lib/cli.js"
+  },
+  "scripts": {
+    "test": "jest && npm run style",
+    "test:watch": "jest --watchAll",
+    "build": "babel src -d lib",
+    "style": "eslint --fix src/",
+    "precommit": "npm test",
+    "serve": "serve docs"
+  },
+  "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "babel-watch": "^7.0.0",
+    "eslint": "^5.16.0",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "meow": "^5.0.0",
+    "showdown": "^1.9.0"
+  }
+}

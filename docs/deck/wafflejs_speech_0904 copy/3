@@ -1,0 +1,23 @@
+<html>
+        <head>
+          <meta charset="utf-8">
+          <meta property="og:type" content="website">
+          <meta property="og:image" content="">
+          <meta property="og:site_name" content="">
+          <title>Presentation | 3</title>
+          <link rel='stylesheet' type='text/css' href='nextdeck/basic.css'>
+        </head>
+        <body>
+          <div id='displayer'>
+            <div>
+<h1 id="livedemo">Live Demo</h1>
+</div>
+          </div>
+          <div id='btn-container'>
+            <a class='btn' href='2'><<</a>
+            <a class='btn' href='4'>>></a>
+            <a class='btn' onclick='toggleFullScreen()'>full screen</a>
+          </div>
+          <script type="application/javascript" src='nextdeck/nextdeck.js' />
+        </body>
+        </html>
