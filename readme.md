@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-Next.js inspired, zero configuration, markdown to presentation without thinking
+Inspired by Next.js, zero configuration, markdown to presentation without thinking
 </p>
 
 ## Demos
@@ -16,8 +16,9 @@ you can build this in less than 3 mins.
 
 - zero configuration, inspired by [zeit/next.js](https://github.com/zeit/next.js)
 - blazing fast (less than 0.3s)
-- easy to create
-- package size only 5.4 kB
+- just markdown + section break (`------`, the 6 dashes)
+
+> just write markdown and build, that's all.
 
 ## Installation
 
