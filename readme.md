@@ -10,6 +10,7 @@ Next.js inspired, zero configuration, markdown to presentation without thinking
 - zero configuration, inspired by [zeit/next.js](https://github.com/zeit/next.js)
 - blazing fast (less than 0.3s)
 - easy to create
+- package size only 5.4 kB
 
 ## Installation
 
