@@ -1,6 +1,6 @@
 {
   "name": "@amazingandyyy/markdeck",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Nextjs inspired, zero configuration, markdown to presentation.",
   "engines": {
     "node": ">=8.0.0"
@@ -22,6 +22,10 @@
   },
   "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
   "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/amazingndyyy/markdeck"
+  },  
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
@@ -34,7 +38,6 @@
   },
   "dependencies": {
     "meow": "^5.0.0",
-    "showdown": "^1.9.0",
-    "window-or-global": "^1.0.1"
+    "showdown": "^1.9.0"
   }
 }
