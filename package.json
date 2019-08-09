@@ -1,21 +1,25 @@
 {
   "name": "@amazingandyyy/next-deck",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Nextjs inspired, zero configuration, markdown to presentation.",
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=8.0.0"
   },
   "engineStrict": true,
   "bin": {
     "deck": "./lib/cli.js"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "jest && npm run style",
     "test:watch": "jest --watchAll",
     "build": "babel src -d lib",
     "style": "eslint --fix src/",
     "precommit": "npm test",
-    "serve": "serve docs"
+    "serve": "serve docs",
+    "publish": "npm publish --access=public"
   },
   "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
   "license": "MIT",
