@@ -62,8 +62,8 @@ const exportHTML = ({transformedMarkdownName, outputPath, DEFAULT_THEME, markdow
             <div>${content}</div>
           </div>
           <div id='btn-container'>
-            <a class='btn' href='${(i-1<=0)?'index.html':i-1}'><<</a>
-            <a class='btn' href='${i+1}'>>></a>
+            <a class='btn' href='/deck/${transformedMarkdownName}/${(i-1<=0)?'index.html':i-1}'><<</a>
+            <a class='btn' href='/deck/${transformedMarkdownName}/${i+1}'>>></a>
             <a class='btn' onclick='toggleFullScreen()'>full screen</a>
           </div>
           <script type="application/javascript" src='nextdeck/nextdeck.js' />

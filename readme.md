@@ -17,7 +17,7 @@ Next.js inspired, zero configuration, markdown to presentation without thinking
 it's on [npm](https://www.npmjs.com/package/@amazingandyyy/next-deck)
 
 ```
-$ npm i -g https://www.npmjs.com/package/@amazingandyyy/next-deck
+$ npm i -g @amazingandyyy/next-deck@latest
 ```
 
 ## Usage
@@ -55,7 +55,7 @@ $ serve ./docs
 # http://localhost:5000/deck/wafflejs_speech_0904/ is on
 ```
 
-then you push to github and turn on **Github Pages**, supporting serving files from `/docs` folder, and the presentation is sharable :) see [demo]()
+then you push to github and turn on **Github Pages**, supporting serving files from `/docs` folder, and the presentation is sharable :) see [demo](https://www.amazingandyyy.com/next-deck/deck/wafflejs_speech_0904/)
 
 ### Support multiple markdowns under `/decks`
 
