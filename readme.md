@@ -36,7 +36,7 @@ $ mkdir decks
 $ touch decks/wafflejs_speech_0904.md
 ```
 
-*Tips*: add `------` (6 dashes) to seperate different pages, and other thing will be just [markdown](https://guides.github.com/features/mastering-markdown/)
+*Tips*: add `------` (6 dashes) to seperate different pages, and other thing will be just [markdown](https://guides.github.com/features/mastering-markdown/), see [example](https://github.com/amazingandyyy/markdeck/blob/master/decks/wafflejs_speech_0904.md)
 
 ### Export to `/docs`
 
