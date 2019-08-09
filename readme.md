@@ -95,6 +95,8 @@ docs/
 
 - add more themes
 - add more page designs
+- add `deck init`
+- add `deck start`
 - add new demo deck
 - more configurable, add `--output` or `--src` or `--theme` flags, right now the default is equivalent
 
