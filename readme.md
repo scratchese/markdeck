@@ -114,6 +114,8 @@ $ deck export --src ./decks --output ./docs --theme basic
 
 - guideline of creating sharable themes
 - launch on product hunt
+- improve whole page refrech and better support fullscreen
+- make it simple and reduce bundle size
 
 ## Resource
 
