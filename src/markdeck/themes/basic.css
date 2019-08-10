@@ -4,7 +4,6 @@ body {
     padding: 0px;
     background: #ededed;
     font-size: 1.2rem;
-    animation: basicFadeIn 0.5s;
 }
 
 body:fullscreen {
@@ -24,6 +23,7 @@ h1, h2 {
     overflow: hidden;
     text-align: center;
     background: white;
+    animation: basicFadeIn 0.5s;
 }
 
 #btn-container {
