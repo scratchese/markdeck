@@ -5,6 +5,6 @@
     "deck-export": "deck export"
   },
   "dependencies": {
-    "@amazingandyyy/markdeck": "0.0.8"
+    "@amazingandyyy/markdeck": "0.0.18"
   }
 }
