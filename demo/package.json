@@ -2,9 +2,9 @@
   "name": "demo",
   "scripts": {
     "present": "deck",
-    "export": "deck export"
+    "export-present": "deck export"
   },
   "dependencies": {
-    "@amazingandyyy/markdeck": "latest"
+    "@amazingandyyy/markdeck": "0.0.7"
   }
 }

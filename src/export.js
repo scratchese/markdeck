@@ -30,9 +30,9 @@ export const exportPresentation = ({flags, markdown, callback}) => {
   rmrf(outputDeckPath, () => {
     execute(`mkdir -p ${outputPath}/markdeck`, ()=>{
       flags.init && console.log(`created ${outputPath}`)
-      execute(`cp -f ${templtPath}/themes/${DEFAULT_THEME}.css ${outputPath}/markdeck/`, ()=>{
+      execute(`cp -rf ${templtPath}/themes/${DEFAULT_THEME}.css ${outputPath}/markdeck/`, ()=>{
         flags.init && console.log(`created ${outputPath}/markdeck/${DEFAULT_THEME}.css`)
-        execute(`cp -f ${templtPath}/lib.js ${outputPath}/markdeck/`, ()=>{
+        execute(`cp -rf ${templtPath}/lib.js ${outputPath}/markdeck/`, ()=>{
           flags.init && console.log(`created ${outputPath}/markdeck/lib.js`)
           exportHTML({flags, filename, outputPath, DEFAULT_THEME, templtPath, markdown, callback})
         })

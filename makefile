@@ -5,7 +5,7 @@ NPM=npm
 build: 
 	rm -rf $(OUTPUT)
 	$(NPM) run build-by-makefile
-	cp -rf $(SRC)/templates $(OUTPUT)
+	cp -rf $(SRC)/markdeck $(OUTPUT)
 
 install-local: build
 	$(NPM) rm -g markdeck && $(NPM) i -g
@@ -13,7 +13,12 @@ install-local: build
 serve:
 	$(NPM) run serve
 
-deploy: build
+deploy: bump build
 	$(NPM) publish --access=public
 
-.PHONY: build serve deploy
+bump:
+	git add .
+	git commit -m "tend to deploy"
+	$(NPM) version patch
+
+.PHONY: build serve deploy bump
