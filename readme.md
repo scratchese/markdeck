@@ -61,6 +61,11 @@ $ tree .
 
 Go to repo setting and turn on **Github Pages** to serve `/docs` folder, and the presentation is sharable for free :)
 
+## Screenshot
+
+![1](https://user-images.githubusercontent.com/7886068/62819284-cffadc00-bb07-11e9-9cc1-5d69261fe2d5.png)
+![2](https://user-images.githubusercontent.com/7886068/62819283-cffadc00-bb07-11e9-8927-d4219e8dbcad.png)
+
 ## License
 
 MIT - as always
