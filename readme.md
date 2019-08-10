@@ -20,7 +20,7 @@ https://amazingandyyy.com/markdeck/deck/wafflejs_speech_0904/
 
 ## Usage
 
-### Install
+### Install globally
 
 ```
 $ npm i -g @amazingandyyy/markdeck
