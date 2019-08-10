@@ -15,6 +15,13 @@ serve:
 
 deploy: bump build
 	$(NPM) publish --access=public
+	cd demo
+	npm update
+	npm run deck-export
+	cd ..
+	git add .
+	git commit -m "deployed and update demo"
+	git push origin master
 
 bump:
 	git add .
