@@ -1,6 +1,7 @@
 OUTPUT=lib
 SRC=src
 NPM=npm
+MAKE=make
 
 build: 
 	rm -rf $(OUTPUT)
@@ -15,10 +16,7 @@ serve:
 
 deploy: bump build
 	$(NPM) publish --access=public
-	cd demo
-	npm update
-	npm run deck-export
-	cd ..
+	$(MAKE) -C demo update
 	git add .
 	git commit -m "deployed and update demo"
 	git push origin master
