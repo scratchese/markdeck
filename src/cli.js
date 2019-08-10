@@ -21,7 +21,7 @@ switch (cli.input[0]) {
   //   init()
   //   break
   case 'export':
-    exportFnc()
+    exportFnc({init: true})
     break
   default:
     devFunc()

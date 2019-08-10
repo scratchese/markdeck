@@ -22,6 +22,7 @@ const callback = () => {
 };
 
 exportFnc({init: true, callback})
+
 const devFnc = () => {
   startDevServer(DEFAULT_OUTPUT_FOLDER, DEV_PORT);
   fs.watch(DEFAULT_SRC_FOLDER, (event, filename)=>{
