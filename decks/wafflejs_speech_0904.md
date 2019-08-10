@@ -1,10 +1,10 @@
-# markdeck
+# Markdeck
 
 ## zero config, presentation deck
 
 ### Markdown as a Presentation
 
-Andy Chen, Sept 9, 2019
+Andy Chen, Sept 4, 2019
 
 ------
 
