@@ -24,8 +24,6 @@ https://amazingandyyy.com/markdeck/deck/wafflejs_speech_0904/
 
 ```
 $ npm i -g @amazingandyyy/markdeck
-or
-$ npm i --save @amazingandyyy/markdeck
 ```
 
 ### Project structure
