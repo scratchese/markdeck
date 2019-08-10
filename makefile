@@ -16,10 +16,10 @@ serve:
 
 deploy: bump build
 	$(NPM) publish --access=public
-	$(MAKE) -C demo update
-	git add .
-	git commit -m "deployed and update demo"
-	git push origin master
+	# $(MAKE) -C demo update
+	# git add .
+	# git commit -m "deployed and update demo"
+	# git push origin master
 	npm i -g @amazingandyyy/markdeck@latest
 	deck --help
 
