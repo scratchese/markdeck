@@ -1,10 +1,10 @@
 # markdeck
 
-## speed up your decks
+## zero config, presentation deck
 
 ### Markdown as a Presentation
 
-Andy Chen, Aug 8, 2019
+Andy Chen, Sept 9, 2019
 
 ------
 
