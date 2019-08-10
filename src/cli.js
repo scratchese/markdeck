@@ -10,9 +10,10 @@ import devFunc from './dev'
 const cli = meow(`
   Usage
   $ deck <action>
-            export
+        export
   
   Examples
+  $ deck
   $ deck export
 `, {})
 

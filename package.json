@@ -1,7 +1,7 @@
 {
   "name": "@amazingandyyy/markdeck",
   "version": "0.0.17",
-  "description": "Markdown to presentation deck, zero configuration.",
+  "description": "zero configuration, markdown to presentation immediately.",
   "engines": {
     "node": ">=8.0.0"
   },
