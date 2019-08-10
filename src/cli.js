@@ -3,6 +3,7 @@
 import meow from 'meow'
 // import init from './init'
 import exportFnc from './export'
+import devFunc from './dev'
 /**
  * This is just a main function
  */
@@ -23,6 +24,6 @@ switch (cli.input[0]) {
     exportFnc()
     break
   default:
-    console.log('https://www.npmjs.com/package/@amazingandyyy/markdeck')
+    devFunc()
     break
 }

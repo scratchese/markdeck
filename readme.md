@@ -131,7 +131,6 @@ this project is generated from [amazingandyyy/modern-js-project](https://github.
 - [PR](https://github.com/amazingandyyy/markdeck/pulls) is highly welcome
 - feel free to open [issues](https://github.com/amazingandyyy/markdeck/issues) as many as possible, it doesn't need to be in details, just general idea is good enough.
 
-
-<div align="center" style="margin-top: 30px;">
+<div align='center' style='margin-top: 30px;'>
     <img src="https://user-images.githubusercontent.com/7886068/62777794-60331580-ba63-11e9-9e32-4b937a81ab08.png" height="50px"/>
 </div>

@@ -1,0 +1,10 @@
+{
+  "name": "demo",
+  "scripts": {
+    "present": "deck",
+    "export": "deck export"
+  },
+  "dependencies": {
+    "@amazingandyyy/markdeck": "latest"
+  }
+}

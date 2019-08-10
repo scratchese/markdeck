@@ -1,15 +1,7 @@
 {
   "name": "@amazingandyyy/markdeck",
-  "version": "0.0.4",
-  "description": "Nextjs inspired, zero configuration, markdown to presentation.",
-  "scripts": {
-    "test": "jest && npm run style",
-    "test:watch": "jest --watchAll",
-    "build-by-makefile": "babel src -d lib",
-    "style": "eslint --fix src/",
-    "precommit": "npm test",
-    "serve": "serve docs"
-  },
+  "version": "0.0.6",
+  "description": "Markdown to presentation deck, zero configuration.",
   "engines": {
     "node": ">=8.0.0"
   },
@@ -19,6 +11,15 @@
   "files": [
     "lib"
   ],
+  "scripts": {
+    "test": "jest && npm run style",
+    "test:watch": "jest --watchAll",
+    "build": "babel src -d lib",
+    "dev": "babel-watch src/dev.js",
+    "style": "eslint --fix src/",
+    "precommit": "npm test",
+    "serve": "serve docs"
+  },
   "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
   "license": "MIT",
   "repository": {
@@ -38,6 +39,7 @@
   },
   "dependencies": {
     "meow": "^5.0.0",
+    "node-static": "^0.7.11",
     "showdown": "^1.9.0"
   }
 }

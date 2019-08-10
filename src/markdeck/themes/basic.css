@@ -4,6 +4,7 @@ body {
     padding: 0px;
     background: #ededed;
     font-size: 1.2rem;
+    animation: basicFadeIn 0.5s;
 }
 
 body:fullscreen {
@@ -44,4 +45,13 @@ a.btn {
 
 a.btn:hover {
     opacity: 1;
+}
+
+@keyframes basicFadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }
