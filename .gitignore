@@ -5,3 +5,4 @@ src/.*
 npm-debug.log
 .cache.*
 demo/docs
+demo/package-lock.json
