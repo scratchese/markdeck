@@ -8,7 +8,7 @@ const devServer = (srcFolder, port) => {
       server.serve(req, res);
     }).resume()
   }).listen(port, () => {
-    console.log(`[server] Serving! http://localhost:${port}`)
+    console.log(`[server] Serving ${srcFolder}/ on http://localhost:${port}`)
   });
 }
 
