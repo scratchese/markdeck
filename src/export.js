@@ -6,7 +6,8 @@ import { readFile } from 'fs';
 import {Printer, execute, rmrf} from './util';
 import {DEFAULT_SRC_FOLDER, DEFAULT_OUTPUT_FOLDER, DEFAULT_THEME} from './default';
 
-const exportFnc = (flags={init: true}) => {
+const exportFnc = (flags) => {
+  flags.init = (flags.init==false)?false:true;
   const srcFolder = flags.src || DEFAULT_SRC_FOLDER;
   execute(`ls -1 ${srcFolder}`, psnttns=>{
     const srcMarkdown = psnttns.split('\n').map((psnttn=>psnttn.substring(psnttn.lastIndexOf('/')+1)))
