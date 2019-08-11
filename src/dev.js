@@ -21,7 +21,6 @@ const callback = () => {
   console.log('[deck] files up to date')
 };
 
-
 const devFnc = () => {
   exportFnc({init: true, callback})
   startDevServer(DEFAULT_OUTPUT_FOLDER, DEV_PORT);

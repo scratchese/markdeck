@@ -43,6 +43,7 @@ switch (cli.input[0]) {
     // exportFnc({init: true, ...cli.flags})
     break
   default:
+    console.log(cli.input[0])
       console.log('3')
     // devFunc()
     break
