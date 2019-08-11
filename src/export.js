@@ -4,6 +4,7 @@ import fs from 'fs';
 import showdown from 'showdown';
 import { readFile } from 'fs';
 import {Printer, execute, rmrf} from './util';
+import {CUSTOMIZE_CSS} from './default';
 
 const exportFnc = (flags) => {
   flags.init = (flags.init==false)?false:true;
@@ -27,15 +28,18 @@ const exportPresentation = ({flags, markdown, callback}) => {
   const filename = markdown.replace('.md', '').replace(/ /g,"_").toLowerCase();
   const outputDeckPath = path.join(flags.out, 'deck');
   const outputPath = path.join(flags.out, 'deck', filename);
-  const templtPath = path.join(__dirname, 'markdeck')
+  const templtPath = path.join(__dirname, 'markdeck');
   rmrf(outputDeckPath, () => {
     execute(`mkdir -p ${outputPath}/markdeck`, ()=>{
       flags.init && console.log(`created ${outputPath}`)
       execute(`cp -rf ${templtPath}/themes/${flags.theme}.css ${outputPath}/markdeck/`, ()=>{
         flags.init && console.log(`created ${outputPath}/markdeck/${flags.theme}.css`)
-        execute(`cp -rf ${templtPath}/lib.js ${outputPath}/markdeck/`, ()=>{
-          flags.init && console.log(`created ${outputPath}/markdeck/lib.js`)
-          exportHTML({flags, outputPath, markdown, callback})
+        execute(`cp -rf ${flag.src}/${filename}.css ${outputPath}/markdeck/${CUSTOMIZE_CSS}`, ()=>{
+          flags.init && console.log(`created ${outputPath}/markdeck/${flags.theme}.css`)
+          execute(`cp -rf ${templtPath}/lib.js ${outputPath}/markdeck/`, ()=>{
+            flags.init && console.log(`created ${outputPath}/markdeck/lib.js`)
+            exportHTML({flags, outputPath, markdown, callback})
+          })
         })
       })
     })
@@ -63,6 +67,7 @@ const exportHTML = ({flags, outputPath, markdown, callback}) => {
           <meta property="og:site_name" content="">
           <title>Presentation | ${i}</title>
           <link rel='stylesheet' type='text/css' href='markdeck/${flags.theme}.css'>
+          <link rel='stylesheet' type='text/css' href='markdeck/${CUSTOMIZE_CSS}'>
           <script type="application/javascript">
             function toggleFullScreen() {
               if (!document.fullscreenElement) {

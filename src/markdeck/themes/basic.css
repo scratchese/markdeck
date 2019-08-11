@@ -24,8 +24,9 @@ p {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 900;
+    line-height: 1rem;
 }
 
 b {
@@ -40,7 +41,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: auto;
     overflow: hidden;
     text-align: center;
@@ -67,6 +68,11 @@ a.btn {
 
 a.btn:hover {
     opacity: 1;
+}
+
+img {
+    width: auto;
+    max-height: 500px;
 }
 
 @keyframes basicFadeIn {
