@@ -7,7 +7,10 @@ const devServer = (srcFolder) => {
     start: (port) => {
       const app = http.createServer((req,res) => {
         req.addListener('end', function () {
+          console.log('1')
+          console.log(Object.keys(server.serve(req, res)))
           server.serve(req, res);
+          console.log('2')
           console.log(Object.keys(server.serve(req, res)))
         }).resume()
       }).listen(port, () => {
