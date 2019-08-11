@@ -4,6 +4,7 @@ import meow from 'meow'
 import init from './init'
 import exportFnc from './export'
 import devFunc from './dev'
+import { exec } from 'child_process';
 /**
  * This is just a main function
  */
@@ -35,16 +36,16 @@ const cli = meow(`
 
 switch (cli.input[0]) {
   case 'init':
-    console.log('1')
-    // init();
+    init();
     break
   case 'export':
-      console.log('2')
-    // exportFnc({init: true, ...cli.flags})
+    exportFnc({init: true, ...cli.flags})
     break
   default:
-    console.log(cli.input[0])
-      console.log('3')
-    // devFunc()
+    if(cli.input[0]===''){
+      devFunc()
+    }else{
+      exec('deck --help')
+    }
     break
 }
