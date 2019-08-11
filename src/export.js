@@ -7,6 +7,7 @@ import {Printer, execute, rmrf} from './util';
 import {DEFAULT_SRC_FOLDER, DEFAULT_OUTPUT_FOLDER, DEFAULT_THEME} from './default';
 
 const exportFnc = (flags) => {
+  console.log(flags);
   flags.init = (flags.init==false)?false:true;
   const srcFolder = flags.src || DEFAULT_SRC_FOLDER;
   execute(`ls -1 ${srcFolder}`, psnttns=>{
