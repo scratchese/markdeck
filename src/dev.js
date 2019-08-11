@@ -11,6 +11,8 @@ const devFnc = (flags) => {
   flags.out = '.cache.deck';
   devServer(flags.out).start(flags.port);
   fs.watch(flags.src, (event, filename)=>{
+    console.log(flags.out)
+    console.log({init: false, callback, ...flags})
     exportFnc({init: false, callback, ...flags});
   })
 }
