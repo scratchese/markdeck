@@ -54,11 +54,13 @@ switch (input) {
     exportFnc({init: true, ...flags})
     break
   default:
-    if(input===''){
-      devFunc(flags)
-    }else{
-      console.log(`${input} is unknown action`)
-      console.log(helpMsg)
-    }
+    console.log('input')
+    console.log(input)
+    // if(input===''){
+    //   // devFunc(flags)
+    // }else{
+    //   console.log(`${input} is unknown action`)
+    //   console.log(helpMsg)
+    // }
     break
 }
