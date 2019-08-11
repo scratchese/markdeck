@@ -7,43 +7,46 @@ import {Printer, execute, rmrf} from './util';
 import {DEFAULT_SRC_FOLDER, DEFAULT_OUTPUT_FOLDER, DEFAULT_THEME} from './default';
 
 const exportFnc = (flags={init: true}) => {
-  execute(`ls -1 ${DEFAULT_SRC_FOLDER}`, psnttns=>{
+  const srcFolder = flags.src || DEFAULT_SRC_FOLDER;
+  execute(`ls -1 ${srcFolder}`, psnttns=>{
     const srcMarkdown = psnttns.split('\n').map((psnttn=>psnttn.substring(psnttn.lastIndexOf('/')+1)))
     srcMarkdown.pop()
-    exportPresentations({flags, srcMarkdown});
+    exportPresentations({flags, srcMarkdown, srcFolder});
   })
 }
 
-const exportPresentations = ({flags, srcMarkdown}) => {
+const exportPresentations = ({flags, srcMarkdown, srcFolder}) => {
   const finish = srcMarkdown.length;
   srcMarkdown.forEach((markdown, i) =>{
     const callback = (i+1==finish)?flags.callback:null;
-    exportPresentation({flags, markdown, callback});
+    exportPresentation({flags, markdown, callback, srcFolder});
   });
 }
 
-export const exportPresentation = ({flags, markdown, callback}) => {
+const exportPresentation = ({flags, markdown, callback, srcFolder}) => {
+  const outputFolder = flags.out || DEFAULT_OUTPUT_FOLDER;
+  const themeName = flags.theme || DEFAULT_THEME;
   const filename = markdown.replace('.md', '').replace(/ /g,"_").toLowerCase();
-  const outputDeckPath = path.join(DEFAULT_OUTPUT_FOLDER, 'deck');
+  const outputDeckPath = path.join(outputFolder, 'deck');
   const outputPath = path.join(outputDeckPath, filename);
   const templtPath = path.join(__dirname, 'markdeck')
   rmrf(outputDeckPath, () => {
     execute(`mkdir -p ${outputPath}/markdeck`, ()=>{
       flags.init && console.log(`created ${outputPath}`)
-      execute(`cp -rf ${templtPath}/themes/${DEFAULT_THEME}.css ${outputPath}/markdeck/`, ()=>{
-        flags.init && console.log(`created ${outputPath}/markdeck/${DEFAULT_THEME}.css`)
+      execute(`cp -rf ${templtPath}/themes/${themeName}.css ${outputPath}/markdeck/`, ()=>{
+        flags.init && console.log(`created ${outputPath}/markdeck/${themeName}.css`)
         execute(`cp -rf ${templtPath}/lib.js ${outputPath}/markdeck/`, ()=>{
           flags.init && console.log(`created ${outputPath}/markdeck/lib.js`)
-          exportHTML({flags, filename, outputPath, DEFAULT_THEME, templtPath, markdown, callback})
+          exportHTML({flags, filename, outputPath, themeName, templtPath, markdown, callback, srcFolder})
         })
       })
     })
   })
 }
 
-const exportHTML = ({flags, filename, outputPath, DEFAULT_THEME, markdown, callback}) => {
+const exportHTML = ({flags, filename, outputPath, themeName, markdown, callback, srcFolder}) => {
   const converter = new showdown.Converter()
-  markdown = path.join(DEFAULT_SRC_FOLDER, markdown)
+  markdown = path.join(srcFolder, markdown)
   fs.readFile(markdown, 'utf8', (err, data) => {
     const html = converter.makeHtml(data);
     const pages = html.split('<hr />')
@@ -61,7 +64,7 @@ const exportHTML = ({flags, filename, outputPath, DEFAULT_THEME, markdown, callb
           <meta property="og:image" content="">
           <meta property="og:site_name" content="">
           <title>Presentation | ${i}</title>
-          <link rel='stylesheet' type='text/css' href='markdeck/${DEFAULT_THEME}.css'>
+          <link rel='stylesheet' type='text/css' href='markdeck/${themeName}.css'>
           <script type="application/javascript">
             function toggleFullScreen() {
               if (!document.fullscreenElement) {
@@ -109,8 +112,5 @@ const exportHTML = ({flags, filename, outputPath, DEFAULT_THEME, markdown, callb
   });
 }
 
-// const _src = '/Users/andy.chen/projects/markdeck/demo/wafflejs_speech_0904.md';
-// const _output = DEFAULT_OUTPUT_FOLDER
-// exportFnc({src: _src, output: _output})
-
+export { exportPresentation };
 export default exportFnc;
