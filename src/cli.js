@@ -7,21 +7,23 @@ import devFunc from './dev'
 import { exec } from 'child_process';
 import {DEFAULT_SRC_FOLDER, DEFAULT_OUTPUT_FOLDER, DEV_PORT} from './default';
 
-const cli = meow(`
-  Usage
-  $ deck <action>
-        export
-  
-  Options
-  --src, -S  source directory, default to ./decks
-  --out, -O  output directory, default to ./docs
-  --port, -P  port for localhost, default to 1234
-  
-  Examples
-  $ deck --port 4321
-  $ deck export
-  $ deck export --src ./my_deck --output ./ready
-`, {
+const helpMsg = `
+Usage
+$ deck <action>
+      export
+
+Options
+--src, -S  source directory, default to ./decks
+--out, -O  output directory, default to ./docs
+--port, -P  port for localhost, default to 1234
+
+Examples
+$ deck --port 4321
+$ deck export
+$ deck export --src ./my_deck --output ./ready
+`
+
+const cli = meow(helpMsg, {
   flags: {
     src: {
       type: 'string',
@@ -41,18 +43,22 @@ const cli = meow(`
   }
 })
 
-switch (cli.input[0]) {
+const input = cli.input[0];
+const flags = cli.flags;
+
+switch (input) {
   case 'init':
-    init();
+    init(flags);
     break
   case 'export':
-    exportFnc({init: true, ...cli.flags})
+    exportFnc({init: true, ...flags})
     break
   default:
-    if(cli.input[0]===''){
-      devFunc()
+    if(input===''){
+      devFunc(flags)
     }else{
-      exec('deck --help')
+      console.log(`${input} is unknown action`)
+      console.log(helpMsg)
     }
     break
 }
