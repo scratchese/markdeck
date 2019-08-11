@@ -1,4 +1,4 @@
-const exec = require('child_process').exec
+import {exec} from 'child_process';
 import path from 'path';
 import fs from 'fs';
 import showdown from 'showdown';
