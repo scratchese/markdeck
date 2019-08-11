@@ -16,7 +16,7 @@ https://amazingandyyy.com/markdeck/deck/wafflejs_speech_0904/
 - SEO ready for every single slide
 - blazing fast
 - no tutorials, only [demo](https://github.com/amazingandyyy/markdeck/tree/master/demo)
-- force you to focus on content, not the fancy animation or layouts
+- force you to focus on content, without worried about fancy animations or layouts
 
 ## Usage
 
