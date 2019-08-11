@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 `use strict`
 import meow from 'meow'
-import init from './init'
+import initFnc from './init'
 import exportFnc from './export'
 import devFunc from './dev'
 import { exec } from 'child_process';
@@ -48,19 +48,19 @@ const flags = cli.flags;
 
 switch (input) {
   case 'init':
-    init(flags);
+    // start init presentation
+    initFnc(flags);
     break
+  case undefined:
+      // start dev server
+      devFunc(flags)
+      break
   case 'export':
+    // start export assets
     exportFnc({init: true, ...flags})
     break
   default:
-    console.log('input')
-    console.log(input)
-    // if(input===''){
-    //   // devFunc(flags)
-    // }else{
-    //   console.log(`${input} is unknown action`)
-    //   console.log(helpMsg)
-    // }
+    console.log(`${input} is unknown action`)
+    console.log(helpMsg)
     break
 }

@@ -1,7 +1,7 @@
 import path from 'path';
 import {exec} from 'child_process';
 
-const init = (flags) => {
+const initFnc = (flags) => {
   const DEFAULT_MD = `./${flags.src}/presentation.md`;
   exec(`mkdir -p ${flags.src}`)
   exec(`cp -rf ${path.resolve(__dirname, 'markdeck', 'template', 'init.md')} ${DEFAULT_MD}`)
@@ -9,4 +9,4 @@ const init = (flags) => {
   console.log(`try \`deck\` to start`)
 }
 
-export default init
+export default initFnc
