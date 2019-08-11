@@ -8,7 +8,7 @@ const callback = () => {
 
 const devFnc = (flags) => {
   exportFnc({init: true, callback, ...flags})
-  devServer(flags.out, flags.port);
+  devServer(flags.out).start(flags.port);
   fs.watch(flags.src, (event, filename)=>{
     exportFnc({init: false, callback, ...flags});
   })
