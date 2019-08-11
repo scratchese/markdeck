@@ -9,7 +9,7 @@ import {CUSTOMIZE_CSS} from './default';
 const exportFnc = (flags) => {
   flags.init = (flags.init==false)?false:true;
   console.log(flags)
-  execute(`ls -1 ${flags.src}`, psnttns=>{
+  execute(`ls -1 ${flags.src}/*.md`, psnttns=>{
     const srcMarkdown = psnttns.split('\n').map((psnttn=>psnttn.substring(psnttn.lastIndexOf('/')+1)))
     srcMarkdown.pop()
     exportPresentations({flags, srcMarkdown});
@@ -35,7 +35,7 @@ const exportPresentation = ({flags, markdown, callback}) => {
       execute(`cp -rf ${templtPath}/themes/${flags.theme}.css ${outputPath}/markdeck/`, ()=>{
         flags.init && console.log(`created ${outputPath}/markdeck/${flags.theme}.css`)
         execute(`cp -rf ${flags.src}/${filename}.css ${outputPath}/markdeck/${CUSTOMIZE_CSS}`, ()=>{
-          flags.init && console.log(`created ${outputPath}/markdeck/${flags.theme}.css`)
+          flags.init && console.log(`created ${outputPath}/markdeck/${CUSTOMIZE_CSS}`)
           execute(`cp -rf ${templtPath}/lib.js ${outputPath}/markdeck/`, ()=>{
             flags.init && console.log(`created ${outputPath}/markdeck/lib.js`)
             exportHTML({flags, outputPath, markdown, callback})
