@@ -10,9 +10,9 @@ for simplism
 
 ## on content
 
-# without worrying about
+without worrying about
 
-## animations or layouts
+animations or layouts
 
 ---
 

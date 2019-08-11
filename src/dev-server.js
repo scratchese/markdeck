@@ -8,6 +8,7 @@ const devServer = (srcFolder) => {
       const app = http.createServer((req,res) => {
         req.addListener('end', function () {
           server.serve(req, res);
+          console.log(Object.keys(server.serve(req, res)))
         }).resume()
       }).listen(port, () => {
         console.log(`[server] Serving ${srcFolder}/ on http://localhost:${port}`)
