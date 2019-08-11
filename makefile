@@ -21,7 +21,7 @@ deploy: bump build
 	# git commit -m "deployed and update demo"
 	# git push origin master
 	npm i -g @amazingandyyy/markdeck@latest
-	deck --help
+	deck --version
 
 bump:
 	git add .
