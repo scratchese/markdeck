@@ -6,7 +6,7 @@
 
 Andy Chen, Aug 8, 2019
 
-------
+---
 
 ## Andy
 
@@ -18,7 +18,7 @@ Udemy-as-a-university, afternoon-qualification, keep-you-posted
 
 live in Mtn view, Fremont, Berkeley, Hayward, Daly City and finally made up in SF
 
-------
+---
 
 # I love Wafflejs since July 2015
 
@@ -32,17 +32,17 @@ My first speech here :)
 
 I also mentor at Nodeschool SF/OAK
 
-------
+---
 
 # Live Demo
 
-------
+---
 
 # It's open source on the hub of git
 
 https://github.com/amazingandyyy/markdeck
 
-------
+---
 
 # Thank you
 

@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-zero configuration, markdown to presentation immediately
+Build SEO-ready slides with zero configuration.
 </p>
 
 Demo:
@@ -13,10 +13,10 @@ https://amazingandyyy.com/markdeck/deck/wafflejs_speech_0904/
 ## Highlights
 
 - zero configuration, inspired by [nextjs](https://github.com/zeit/next.js)
-- just markdown
+- SEO ready for every single slide
 - blazing fast
 - no tutorials, only [demo](https://github.com/amazingandyyy/markdeck/tree/master/demo)
-- force you to focus on content, not fancy animation or layouts.
+- force you to focus on content, not the fancy animation or layouts
 
 ## Usage
 
