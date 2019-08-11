@@ -4,30 +4,27 @@ import fs from 'fs';
 import showdown from 'showdown';
 import { readFile } from 'fs';
 import {Printer, execute, rmrf} from './util';
-import {DEFAULT_SRC_FOLDER, DEFAULT_OUTPUT_FOLDER, DEFAULT_THEME} from './default';
 
 const exportFnc = (flags) => {
-  console.log(flags);
   flags.init = (flags.init==false)?false:true;
-  const srcFolder = flags.src || DEFAULT_SRC_FOLDER;
-  execute(`ls -1 ${srcFolder}`, psnttns=>{
+  execute(`ls -1 ${flags.src}`, psnttns=>{
     const srcMarkdown = psnttns.split('\n').map((psnttn=>psnttn.substring(psnttn.lastIndexOf('/')+1)))
     srcMarkdown.pop()
-    exportPresentations({flags, srcMarkdown, srcFolder});
+    exportPresentations({flags, srcMarkdown});
   })
 }
 
-const exportPresentations = ({flags, srcMarkdown, srcFolder}) => {
+const exportPresentations = ({flags, srcMarkdown}) => {
   const finish = srcMarkdown.length;
   srcMarkdown.forEach((markdown, i) =>{
     const callback = (i+1==finish)?flags.callback:null;
-    exportPresentation({flags, markdown, callback, srcFolder});
+    exportPresentation({flags, markdown, callback});
   });
 }
 
-const exportPresentation = ({flags, markdown, callback, srcFolder}) => {
-  const outputFolder = flags.out || DEFAULT_OUTPUT_FOLDER;
-  const themeName = flags.theme || DEFAULT_THEME;
+const exportPresentation = ({flags, markdown, callback}) => {
+  const outputFolder = flags.out;
+  const themeName = flags.theme;
   const filename = markdown.replace('.md', '').replace(/ /g,"_").toLowerCase();
   const outputDeckPath = path.join(outputFolder, 'deck');
   const outputPath = path.join(outputDeckPath, filename);
@@ -39,16 +36,16 @@ const exportPresentation = ({flags, markdown, callback, srcFolder}) => {
         flags.init && console.log(`created ${outputPath}/markdeck/${themeName}.css`)
         execute(`cp -rf ${templtPath}/lib.js ${outputPath}/markdeck/`, ()=>{
           flags.init && console.log(`created ${outputPath}/markdeck/lib.js`)
-          exportHTML({flags, filename, outputPath, themeName, templtPath, markdown, callback, srcFolder})
+          exportHTML({flags, filename, outputPath, themeName, templtPath, markdown, callback})
         })
       })
     })
   })
 }
 
-const exportHTML = ({flags, filename, outputPath, themeName, markdown, callback, srcFolder}) => {
+const exportHTML = ({flags, filename, outputPath, themeName, markdown, callback}) => {
   const converter = new showdown.Converter()
-  markdown = path.join(srcFolder, markdown)
+  markdown = path.join(flags.src, markdown)
   fs.readFile(markdown, 'utf8', (err, data) => {
     const html = converter.makeHtml(data);
     const pages = html.split('<hr />')

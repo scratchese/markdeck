@@ -5,32 +5,39 @@ import init from './init'
 import exportFnc from './export'
 import devFunc from './dev'
 import { exec } from 'child_process';
-/**
- * This is just a main function
- */
+import {DEFAULT_SRC_FOLDER, DEFAULT_OUTPUT_FOLDER, DEV_PORT} from './default';
+
 const cli = meow(`
   Usage
   $ deck <action>
         export
   
   Options
-  --src, -S  source directory
-  --out, -O  output directory
+  --src, -S  source directory, default to ./decks
+  --out, -O  output directory, default to ./docs
+  --port, -P  port for localhost, default to 1234
   
   Examples
-  $ deck
+  $ deck --port 4321
   $ deck export
-  $ export --src ./my_deck --output ./ready
+  $ deck export --src ./my_deck --output ./ready
 `, {
   flags: {
     src: {
       type: 'string',
-      alias: 'S'
+      alias: 'S',
+      default: DEFAULT_SRC_FOLDER
     },
     output: {
       type: 'string',
-      alias: 'O'
-    }
+      alias: 'O',
+      default: DEFAULT_OUTPUT_FOLDER
+    },
+    port: {
+      type: 'string',
+      alias: 'P',
+      default: DEV_PORT
+    },
   }
 })
 
