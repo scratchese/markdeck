@@ -8,7 +8,6 @@ import {CUSTOMIZE_CSS} from './default';
 
 const exportFnc = (flags) => {
   flags.init = (flags.init==false)?false:true;
-  console.log(flags)
   execute(`ls -1 ${flags.src}/*.md`, psnttns=>{
     const srcMarkdown = psnttns.split('\n').map((psnttn=>psnttn.substring(psnttn.lastIndexOf('/')+1)))
     srcMarkdown.pop()

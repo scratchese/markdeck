@@ -1,28 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Qwigley&display=swap');
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 0px;
-    background: #ededed;
+    background: white;
     font-size: 1.2rem;
+    font-weight: 400;
 }
 
 body:fullscreen {
     transform: scale(200%);
 }
 
-h1, h2 {
-    /* font-size: 2rem; */
+em {
+    font-weight: 300;
+    font-family: 'Qwigley', cursive;
+}
+
+p {
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1rem;
+}
+
+b {
+    font-weight: 900;
+}
+
+h2 {
+    font-weight: 400;
 }
 
 #displayer{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: auto;
     overflow: hidden;
     text-align: center;
-    background: white;
     animation: basicFadeIn 0.5s;
 }
 
@@ -45,6 +67,11 @@ a.btn {
 
 a.btn:hover {
     opacity: 1;
+}
+
+img {
+    width: auto;
+    max-height: 500px;
 }
 
 @keyframes basicFadeIn {

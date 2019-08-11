@@ -1,5 +1,6 @@
 import staticServer from 'node-static';
 import http from 'http';
+import { exec } from 'child_process';
 
 const devServer = (srcFolder) => {
   const server = new(staticServer.Server)(srcFolder);
@@ -7,16 +8,15 @@ const devServer = (srcFolder) => {
     start: (port) => {
       const app = http.createServer((req,res) => {
         req.addListener('end', function () {
-          console.log('1')
-          console.log(Object.keys(server.serve(req, res)))
           server.serve(req, res);
-          console.log('2')
-          console.log(Object.keys(server.serve(req, res)))
         }).resume()
       }).listen(port, () => {
         console.log(`[server] Serving ${srcFolder}/ on http://localhost:${port}`)
       });
-    }
+      app.on('error', err => {
+        exec(`rm -rf ${srcFolder}`);
+      });
+    },
   }
 }
 
