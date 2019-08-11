@@ -35,12 +35,15 @@ const cli = meow(`
 
 switch (cli.input[0]) {
   case 'init':
-    init();
+    console.log('1')
+    // init();
     break
   case 'export':
-    exportFnc({init: true, ...cli.flags})
+      console.log('2')
+    // exportFnc({init: true, ...cli.flags})
     break
   default:
-    devFunc()
+      console.log('3')
+    // devFunc()
     break
 }

@@ -25,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amazingndyyy/markdeck"
+    "url": "https://github.com/amazingandyyy/markdeck"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",

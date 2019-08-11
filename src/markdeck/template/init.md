@@ -1,6 +1,6 @@
-# Markdeck made simplism
+# Markdeck, simplism
 
-## Simple, fast, SEO ready
+## Focus on content
 
 ---
 
@@ -12,4 +12,4 @@
 
 # Open source
 
-[Github](https://github.com/amazingndyyy/markdeck)
+[Github](https://github.com/amazingandyyy/markdeck)
