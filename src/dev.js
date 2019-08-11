@@ -1,30 +1,16 @@
-import http from 'http';
 import fs from 'fs';
-import path from 'path';
-import { exec } from 'child_process';
-import staticServer from 'node-static';
 import exportFnc from './export';
-
-const startDevServer = (srcFolder, port) =>{
-  const devServer = new(staticServer.Server)(srcFolder);
-  const app = http.createServer((req,res) => {
-    req.addListener('end', function () {
-      devServer.serve(req, res);
-    }).resume()
-  }).listen(port, () => {
-    console.log(`[server] Serving! http://localhost:${port}`)
-  });
-}
+import devServer from './dev-server';
 
 const callback = () => {
-  console.log('[deck] files up to date')
+  console.log('[deck] files are up to date')
 };
 
 const devFnc = (flags) => {
-  exportFnc({init: true, callback})
-  startDevServer(flags.output, flags.port);
+  exportFnc({init: true, callback, ...flags})
+  devServer(flags.output).start(flags.port);
   fs.watch(flags.src, (event, filename)=>{
-    exportFnc({init: false, callback});
+    exportFnc({init: false, callback, ...flags});
   })
 }
 

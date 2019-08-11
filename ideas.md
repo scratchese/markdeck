@@ -12,3 +12,31 @@
 ## Suggestions
 
 - [PR](https://github.com/amazingandyyy/markdeck/pulls)/[issues](https://github.com/amazingandyyy/markdeck/issues) are highly welcome
+
+## CLI
+
+### Babel command
+
+```
+babel script.js --out-file script-compiled.js
+babel src --out-dir lib
+```
+
+### Next js
+
+```
+next
+next start
+next build
+next export
+
+package.json
+{
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "export": "npm run build && next export",
+    "start": "next start"
+  }
+}
+```
