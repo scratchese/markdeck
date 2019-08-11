@@ -30,7 +30,7 @@ const cli = meow(helpMsg, {
       alias: 'S',
       default: DEFAULT_SRC_FOLDER
     },
-    output: {
+    out: {
       type: 'string',
       alias: 'O',
       default: DEFAULT_OUTPUT_FOLDER
