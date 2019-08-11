@@ -21,15 +21,13 @@ const callback = () => {
   console.log('[deck] files up to date')
 };
 
-exportFnc({init: true, callback})
 
 const devFnc = () => {
+  exportFnc({init: true, callback})
   startDevServer(DEFAULT_OUTPUT_FOLDER, DEV_PORT);
   fs.watch(DEFAULT_SRC_FOLDER, (event, filename)=>{
     exportFnc({init: false, callback});
   })
 }
-
-// devFnc();
 
 export default devFnc;
