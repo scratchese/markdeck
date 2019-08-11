@@ -5,7 +5,7 @@ import initFnc from './init'
 import exportFnc from './export'
 import devFunc from './dev'
 import { exec } from 'child_process';
-import {DEFAULT_SRC_FOLDER, DEFAULT_OUTPUT_FOLDER, DEV_PORT} from './default';
+import {DEFAULT_SRC_FOLDER, DEFAULT_OUTPUT_FOLDER, DEV_PORT, DEFAULT_THEME} from './default';
 
 const helpMsg = `
 Usage
@@ -39,6 +39,11 @@ const cli = meow(helpMsg, {
       type: 'string',
       alias: 'P',
       default: DEV_PORT
+    },
+    theme: {
+      type: 'string',
+      alias: 'T',
+      default: DEFAULT_THEME
     },
   }
 })

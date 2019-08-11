@@ -24,27 +24,25 @@ const exportPresentations = ({flags, srcMarkdown}) => {
 }
 
 const exportPresentation = ({flags, markdown, callback}) => {
-  const outputFolder = flags.out;
-  const themeName = flags.theme;
   const filename = markdown.replace('.md', '').replace(/ /g,"_").toLowerCase();
-  const outputDeckPath = path.join(outputFolder, 'deck');
-  const outputPath = path.join(outputDeckPath, filename);
+  const outputDeckPath = path.join(flags.out, 'deck');
+  const outputPath = path.join(flags.out, 'deck', filename);
   const templtPath = path.join(__dirname, 'markdeck')
   rmrf(outputDeckPath, () => {
     execute(`mkdir -p ${outputPath}/markdeck`, ()=>{
       flags.init && console.log(`created ${outputPath}`)
-      execute(`cp -rf ${templtPath}/themes/${themeName}.css ${outputPath}/markdeck/`, ()=>{
-        flags.init && console.log(`created ${outputPath}/markdeck/${themeName}.css`)
+      execute(`cp -rf ${templtPath}/themes/${flags.theme}.css ${outputPath}/markdeck/`, ()=>{
+        flags.init && console.log(`created ${outputPath}/markdeck/${flags.theme}.css`)
         execute(`cp -rf ${templtPath}/lib.js ${outputPath}/markdeck/`, ()=>{
           flags.init && console.log(`created ${outputPath}/markdeck/lib.js`)
-          exportHTML({flags, filename, outputPath, themeName, templtPath, markdown, callback})
+          exportHTML({flags, outputPath, markdown, callback})
         })
       })
     })
   })
 }
 
-const exportHTML = ({flags, filename, outputPath, themeName, markdown, callback}) => {
+const exportHTML = ({flags, outputPath, markdown, callback}) => {
   const converter = new showdown.Converter()
   markdown = path.join(flags.src, markdown)
   fs.readFile(markdown, 'utf8', (err, data) => {
@@ -64,7 +62,7 @@ const exportHTML = ({flags, filename, outputPath, themeName, markdown, callback}
           <meta property="og:image" content="">
           <meta property="og:site_name" content="">
           <title>Presentation | ${i}</title>
-          <link rel='stylesheet' type='text/css' href='markdeck/${themeName}.css'>
+          <link rel='stylesheet' type='text/css' href='markdeck/${flags.theme}.css'>
           <script type="application/javascript">
             function toggleFullScreen() {
               if (!document.fullscreenElement) {
