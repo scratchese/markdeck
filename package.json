@@ -17,7 +17,7 @@
     "build-by-makefile": "babel src -d lib",
     "dev": "babel-watch src/dev.js",
     "style": "eslint --fix src/",
-    "precommit": "npm run test",
+    "prepush": "npm run test",
     "present": "deck",
     "export-present": "deck export"
   },
