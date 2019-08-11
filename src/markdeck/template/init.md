@@ -1,12 +1,18 @@
-# Markdeck, simplism
+# Markdeck
 
-## Focus on content
+## created by simplism
+ 
+for simplism
 
 ---
 
-# Even better
+# Focus
 
-## Every slide is SEO ready
+## on content
+
+# without worrying about
+
+## animations or layouts
 
 ---
 
