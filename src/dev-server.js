@@ -13,9 +13,9 @@ const devServer = (srcFolder) => {
       }).listen(port, () => {
         console.log(`[server] Serving ${srcFolder}/ on http://localhost:${port}`)
       });
-      app.on('error', err => {
+      process.on('SIGINT', () => {
         exec(`rm -rf ${srcFolder}`);
-      });
+      })
     },
   }
 }
