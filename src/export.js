@@ -7,6 +7,7 @@ import {Printer, execute, rmrf} from './util';
 
 const exportFnc = (flags) => {
   flags.init = (flags.init==false)?false:true;
+  console.log(flags)
   execute(`ls -1 ${flags.src}`, psnttns=>{
     const srcMarkdown = psnttns.split('\n').map((psnttn=>psnttn.substring(psnttn.lastIndexOf('/')+1)))
     srcMarkdown.pop()
