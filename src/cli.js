@@ -3,8 +3,7 @@
 import meow from 'meow'
 import initFnc from './init'
 import exportFnc from './export'
-import devFunc from './dev'
-import { exec } from 'child_process';
+import devFnc from './dev'
 import {DEFAULT_SRC_FOLDER, DEFAULT_OUTPUT_FOLDER, DEV_PORT, DEFAULT_THEME} from './default';
 
 const helpMsg = `
@@ -53,18 +52,30 @@ const flags = cli.flags;
 
 switch (input) {
   case 'init':
-    // start init presentation
+    // auto created ./decks/presentation.md for the user to start with
+    // $ deck init
     initFnc(flags);
     break
   case undefined:
-      // start dev server
-      devFunc(flags)
-      break
+    // compile decks/ into .cache.deck and dev server serves it on localhost:1234
+    // $ deck
+    // compile my_deck_dir/ into .cache.deck and dev server serves it on localhost:1234
+    // $ deck --src my_deck_dir
+    // compile my_deck_dir/ into .cache.deck and dev server serves it on localhost:5000
+    // $ deck --src my_deck_dir --port 5000
+    devFnc(flags)
+    break
   case 'export':
-    // start export assets
+    // compile decks/ to docs/
+    // $ deck export
+    // compile my_deck_dir/ to docs/
+    // $ deck export --src my_deck_dir
+    // compile my_deck_dir/ to another_docs_dir/
+    // $ deck export --src my_deck_dir --out another_docs_dir
     exportFnc({init: true, ...flags})
     break
   default:
+    // catch unknown command and show help message
     console.log(`${input} is unknown action`)
     console.log(helpMsg)
     break
