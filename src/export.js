@@ -37,6 +37,11 @@ const exportPresentation = ({flags, markdown, callback}) => {
           flags.init && console.log(`created ${outputPath}/markdeck/${CUSTOMIZE_CSS}`)
           execute(`cp -rf ${templtPath}/lib.js ${outputPath}/markdeck/`, ()=>{
             flags.init && console.log(`created ${outputPath}/markdeck/lib.js`)
+            flags.assets && execute(`cp -rf ${flags.assets} ${outputPath}/`, ()=>{
+              flags.init && console.log(`created ${outputPath}/${flags.assets}`)
+              exportHTML({flags, outputPath, markdown, callback})
+              return;
+            })
             exportHTML({flags, outputPath, markdown, callback})
           })
         })

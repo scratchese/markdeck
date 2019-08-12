@@ -15,6 +15,7 @@ Options
 --src, -S  source directory, default to ./decks
 --out, -O  output directory, default to ./docs
 --port, -P  port for localhost, default to 1234
+--assets, -A  static assets folder, default to none
 
 Examples
 $ deck --port 4321
@@ -43,6 +44,10 @@ const cli = meow(helpMsg, {
       type: 'string',
       alias: 'T',
       default: DEFAULT_THEME
+    },
+    assets: {
+      type: 'string',
+      alias: 'A'
     },
   }
 })
