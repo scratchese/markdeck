@@ -1,6 +1,6 @@
 {
   "name": "@amazingandyyy/markdeck",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Build SEO-ready slides with zero configuration.",
   "engines": {
     "node": ">=8.0.0"
