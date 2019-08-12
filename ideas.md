@@ -9,7 +9,7 @@
 - reduce bundle size
 - launch on product hunt
 
-## Markdeck projet ultimate goal
+## Markdeck project ultimate goal
 
 ```
 github.com/markdeck-project
@@ -27,7 +27,7 @@ github.com/markdeck-project
 
 - [PR](https://github.com/amazingandyyy/markdeck/pulls)/[issues](https://github.com/amazingandyyy/markdeck/issues) are highly welcome
 
-## more intuitive CLI
+## More intuitive CLI
 
 ### Babel command
 
