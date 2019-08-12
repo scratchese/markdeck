@@ -44,6 +44,7 @@
     "html-minifier": "^4.0.0",
     "meow": "^5.0.0",
     "node-static": "^0.7.11",
+    "puppeteer": "^1.19.0",
     "puppeteer-core": "^1.19.0",
     "resolve": "^1.12.0",
     "showdown": "^1.9.0"

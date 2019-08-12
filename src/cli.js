@@ -56,6 +56,10 @@ const cli = meow(helpMsg, {
     optimize: {
       type: 'boolean',
       default: false
+    },
+    timestamps: {
+      type: 'string',
+      default: Date.now()
     }
   }
 })

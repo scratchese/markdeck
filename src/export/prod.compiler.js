@@ -64,7 +64,7 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
           <meta property="og:title" content="${title}"></meta>
           <meta property="og:site_name" content="markdeck"></meta>
           <meta property="og:image" content="${productionImageURL}"></meta>
-          <meta property="og:image:type" content="image/png" /></meta>
+          <meta property="og:image:type" content="image/jpeg" /></meta>
           <meta name="twitter:card" content="summary_large_image"></meta>
           <meta name="twitter:image" content="${productionImageURL}"></meta>
           <meta name="twitter:title" content="${title}"></meta>
