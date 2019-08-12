@@ -54,8 +54,9 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
       // 'https://github.com/amazingandyyy/markdeck/master/demo/docs'
       // 'https://github.com/amazingandyyy/markdeck/tree/master/demo/docs'
       const productionRootURL = flags.url?flags.url:'https://github.com/amazingandyyy/markdeck/tree/master/demo/docs';
-      const productionImageURLPending = path.join(productionRootURL.replace('https://github.com/', 'https://raw.githubusercontent.com/').replace('/tree/', '/'), outputPath ,'meta', `${fileNamePure}.jpeg?${Date.now()}`);
-      const productionImageURL = productionImageURLPending.replace('/docs/docs/', '/docs/')
+      const productionImageURLPending = path.join(productionRootURL.replace('https://github.com/', 'raw.githubusercontent.com/').replace('/tree', ''), outputPath ,'meta', `${fileNamePure}.jpeg?${Date.now()}`);
+      const productionImageURL = 'https://' + productionImageURLPending.replace('/docs/docs/', '/docs/')
+      console.log(productionImageURL)
       const title = `${filename.charAt(0).toUpperCase() + filename.slice(1)} | ${(fileNamePure=='index')?'Welcome':fileNamePure}`;
       const htmlString = `<html lang="en">
         <head>
