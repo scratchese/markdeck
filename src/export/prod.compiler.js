@@ -49,10 +49,6 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
       const outputHTMLPath = path.join(outputPath, `${htmlFileName}`)
       flags.init && console.log(`created ${outputHTMLPath}`)
       const file = new Printer(outputHTMLPath)
-      // 'https://raw.githubusercontent.com/amazingandyyy/markdeck/master/demo/docs/deck/presentation/meta/index.jpeg'
-      // 'https:/github.com/amazingandyyy/markdeck/raw/master/demo/docs/deck/presentation/meta/index.jpeg'
-      // 'https://github.com/amazingandyyy/markdeck/master/demo/docs'
-      // 'https://github.com/amazingandyyy/markdeck/tree/master/demo/docs'
       const productionRootURL = flags.url?flags.url:'https://github.com/amazingandyyy/markdeck/tree/master/demo/docs';
       const productionImageURLPending = path.join(productionRootURL.replace('https://github.com/', 'raw.githubusercontent.com/').replace('/tree', ''), outputPath ,'meta', `${fileNamePure}.jpeg?${Date.now()}`);
       const productionImageURL = 'https://' + productionImageURLPending.replace('/docs/docs/', '/docs/')

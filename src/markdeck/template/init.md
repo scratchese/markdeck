@@ -1,8 +1,8 @@
-# Markdeck
+# Markdeck v0.2
 
-## created by simplism
+## Build SEO friendy, sharable presentation immediately
  
-for simplism
+Inpired by Nextjs, zero configuration!
 
 ---
 
@@ -16,6 +16,16 @@ not
 
 ---
 
+## zero configuration
+
+```shell
+$ npm i -g @amazingandyyy/markdeck
+$ deck init
+$ deck
+```
+
+---
+
 *build by*
 
 # Andy
@@ -24,15 +34,6 @@ not
 
 [Github](https://github.com/amazingandyyy) *or* [Website](https://amazingandyyy.com)
 
----
-
-## zero configuration
-
-```shell
-$ npm i -g @amazingandyyy/markdeck
-$ deck init
-$ deck
-```
 ---
 
 Open Source On
