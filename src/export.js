@@ -95,7 +95,7 @@ const exportHTML = ({flags, outputPath, markdown, callback}) => {
             }
           </script>        
         </head>
-        <body id='${i}'>
+        <body id='page-${i}'>
           <div id='displayer'>
             <div>${content}</div>
           </div>
