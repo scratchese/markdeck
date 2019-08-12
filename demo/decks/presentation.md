@@ -6,13 +6,13 @@ for simplism
 
 ---
 
-# Focus
+Focus on
 
-## on content
+# content
 
-without worrying about
+not
 
-animations or layouts
+## animations or layouts
 
 ---
 
