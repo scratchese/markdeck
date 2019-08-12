@@ -1,5 +1,5 @@
 <div align="center" style="margin-top: 30px; margin-bottom: 30px">
-    <img src="https://user-images.githubusercontent.com/7886068/62777794-60331580-ba63-11e9-9e32-4b937a81ab08.png" width="250px"/>
+    <img src="https://user-images.githubusercontent.com/7886068/62842733-069c3800-bc69-11e9-8941-a848612906e3.png" width="250px"/>
 </div>
 
 <p align="center">
@@ -61,9 +61,8 @@ $ tree .
 
 Go to repo setting and turn on **Github Pages** to serve `/docs` folder, and the presentation is sharable for free :)
 
-## Screenshot
+## Screenshots
 
-![1](https://user-images.githubusercontent.com/7886068/62842693-ad340900-bc68-11e9-8010-09c77bd3ebbc.png)
 ![2](https://user-images.githubusercontent.com/7886068/62842694-ad340900-bc68-11e9-8fd8-ba3e7b0dfd12.png)
 ![3](https://user-images.githubusercontent.com/7886068/62842695-ad340900-bc68-11e9-8c44-14636f3cc461.png)
 
