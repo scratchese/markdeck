@@ -8,7 +8,7 @@ Build SEO-ready slides with zero configuration.
 
 Demo:
 
-https://amazingandyyy.com/markdeck/deck/wafflejs_speech_0904/
+https://www.amazingandyyy.com/markdeck/demo/docs/deck/presentation
 
 ## Highlights
 
