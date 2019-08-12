@@ -57,11 +57,9 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
           <meta property="og:type" content="article">
           <meta property="og:title" content="${title}">
           <meta property="og:description" content="${data}">
-          // <meta property="og:url" content="">
           <meta property="og:site_name" content="markdeck">
           <meta property="og:image" content="meta/${fileNamePure}.png">
           <meta property="og:image:type" content="image/png" />
-          // <meta name="twitter:url" content="">
           <meta name="twitter:description" content="${data}">
           <meta name="twitter:card" content="summary_large_image">
           <meta name="twitter:image" content="meta/${fileNamePure}.png">
