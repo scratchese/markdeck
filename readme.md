@@ -63,8 +63,9 @@ Go to repo setting and turn on **Github Pages** to serve `/docs` folder, and the
 
 ## Screenshot
 
-![1](https://user-images.githubusercontent.com/7886068/62819284-cffadc00-bb07-11e9-9cc1-5d69261fe2d5.png)
-![2](https://user-images.githubusercontent.com/7886068/62819283-cffadc00-bb07-11e9-8927-d4219e8dbcad.png)
+![1](https://user-images.githubusercontent.com/7886068/62842693-ad340900-bc68-11e9-8010-09c77bd3ebbc.png)
+![2](https://user-images.githubusercontent.com/7886068/62842694-ad340900-bc68-11e9-8fd8-ba3e7b0dfd12.png)
+![3](https://user-images.githubusercontent.com/7886068/62842695-ad340900-bc68-11e9-8c44-14636f3cc461.png)
 
 ## License
 
