@@ -48,6 +48,10 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
       const outputHTMLPath = path.join(outputPath, `${htmlFileName}`)
       flags.init && console.log(`created ${outputHTMLPath}`)
       const file = new Printer(outputHTMLPath)
+      const productionRootURL = flags.url?flags.url:'https://github.com/amazingandyyy/markdeck/tree/master/demo/docs';
+      const productionImageURLPending = path.join(productionRootURL.replace('/tree/', '/blob/'), outputPath ,'meta', `${fileNamePure}.png`) + `?raw=true`
+      const productionImageURL = productionImageURLPending.replace('/docs/docs/', '/docs/')
+      console.log('productionImageURL', productionImageURL)
       const title = `${filename} | ${(fileNamePure=='index')?'cover':fileNamePure}`;
       const htmlString = `<html lang="en">
         <head>
@@ -58,11 +62,11 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
           <meta property="og:title" content="${title}">
           <meta property="og:description" content="${data}">
           <meta property="og:site_name" content="markdeck">
-          <meta property="og:image" content="meta/${fileNamePure}.png">
+          <meta property="og:image" content="meta/${productionImageURL}">
           <meta property="og:image:type" content="image/png" />
           <meta name="twitter:description" content="${data}">
           <meta name="twitter:card" content="summary_large_image">
-          <meta name="twitter:image" content="meta/${fileNamePure}.png">
+          <meta name="twitter:image" content="meta/${productionImageURL}">
           <meta name="twitter:title" content="${title}">
           <meta property="article:modified_time" content="${Date().toLocaleString()}">
           <meta property="article:publisher" content="https://amazingandyyy.com/markdeck">

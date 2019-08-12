@@ -61,6 +61,12 @@ $ tree .
 
 Go to repo setting and turn on **Github Pages** to serve `/docs` folder, and the presentation is sharable for free :)
 
+### Production / SEO
+
+```
+$ deck export --assets images --url https://github.com/amazingandyyy/markdeck/tree/master/demo/docs --optimize
+```
+
 ## Screenshots
 
 ![2](https://user-images.githubusercontent.com/7886068/62842694-ad340900-bc68-11e9-8fd8-ba3e7b0dfd12.png)
