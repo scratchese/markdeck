@@ -1,8 +1,20 @@
-# Markdeck v2.1
+# Markdeck v0.2
 
-## Build SEO friendy, sharable presentation immediately
- 
+### The first SEO friendly presentation builder
+
 Inpired by Nextjs, zero configuration!
+
+---
+
+
+# zero configuration
+
+```shell
+$ npm i -g @amazingandyyy/markdeck
+$ deck init
+$ deck
+$ deck export --optimize
+```
 
 ---
 
@@ -12,17 +24,7 @@ Focus on
 
 not
 
-## animations or layouts
-
----
-
-## zero configuration
-
-```shell
-$ npm i -g @amazingandyyy/markdeck
-$ deck init
-$ deck
-```
+### animations or layouts
 
 ---
 
