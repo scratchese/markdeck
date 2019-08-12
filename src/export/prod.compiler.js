@@ -5,7 +5,7 @@ import { readFile } from 'fs';
 import { fork, exec } from 'child_process';
 import {Printer, execute} from '../util';
 import {CUSTOMIZE_CSS} from '../default';
-import {screenshotUrlToPNG} from '../seo';
+import {screenshotUrlToImage} from '../seo';
 const minify = require('html-minifier').minify;
 
 export const generateScreenShotCallBack = ({flags, outputPath, filename}) => {
@@ -21,11 +21,12 @@ export const generateScreenShotCallBack = ({flags, outputPath, filename}) => {
         const screenshots = files.map(async (file)=>{
           const file_name = `${file.split('.html')[0].split('/').pop()}`
           const url = `http://localhost:${flags.port}/${path}/${file_name}.html`;
-          const outputFullPath = `${outputPath}/meta/${file_name}.png`;
+          const outputFullPath = `${outputPath}/meta/${file_name}.jpeg`;
           console.log(`created ${outputFullPath}`);
-          return await screenshotUrlToPNG(url, outputFullPath)
+          return await screenshotUrlToImage(url, outputFullPath)
         })
         Promise.all(screenshots).then(()=>{
+          console.log(`finished search engine optimization!`);
           forked_background_server.kill()
         }).catch(err=>{
           console.log('Error', err);
@@ -49,7 +50,7 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
       flags.init && console.log(`created ${outputHTMLPath}`)
       const file = new Printer(outputHTMLPath)
       const productionRootURL = flags.url?flags.url:'https://github.com/amazingandyyy/markdeck/tree/master/demo/docs';
-      const productionImageURLPending = path.join(productionRootURL.replace('/tree/', '/raw/'), outputPath ,'meta', `${fileNamePure}.png`);
+      const productionImageURLPending = path.join(productionRootURL.replace('/tree/', '/raw/'), outputPath ,'meta', `${fileNamePure}.jpeg`);
       const productionImageURL = productionImageURLPending.replace('/docs/docs/', '/docs/')
       const title = `${filename.charAt(0).toUpperCase() + filename.slice(1)} | ${(fileNamePure=='index')?'Welcome':fileNamePure}`;
       const htmlString = `<html lang="en">
@@ -69,10 +70,11 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
           <meta property="article:modified_time" content="${Date().toLocaleString()}">
           <meta property="article:publisher" content="https://amazingandyyy.com/markdeck">
           <meta name="twitter:site" content="@markdeck">
-          <meta property="og:image:width" content="960">
-          <meta property="og:image:height" content="540">
+          <meta name="twitter:creator" content="@markdeck">
+          <meta property="og:image:width" content="640">
+          <meta property="og:image:height" content="640">
           <meta property="og:description" content="${data}">
-          <meta name="twitter:description" content="${data}">
+          <meta name="twitter:description">
           <link rel='stylesheet' type='text/css' href='markdeck/${flags.theme}.css'>
           <link rel='stylesheet' type='text/css' href='markdeck/${CUSTOMIZE_CSS}'>
 

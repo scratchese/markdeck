@@ -1,13 +1,13 @@
 import puppeteer from 'puppeteer';
 import path from 'path';
 
-const screenshotUrlToPNG = async (url, path) => {
-  const SCALE = 60;
+const screenshotUrlToImage = async (url, path) => {
+  const SCALE = 40;
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.setViewport({
     width: 16*SCALE,
-    height: 9*SCALE,
+    height: 16*SCALE,
     deviceScaleFactor: 1,
   });
   await page.goto(url);
@@ -16,4 +16,4 @@ const screenshotUrlToPNG = async (url, path) => {
   await browser.close();
 }
 
-export {screenshotUrlToPNG};
+export {screenshotUrlToImage};
