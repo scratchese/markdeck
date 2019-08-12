@@ -116,8 +116,8 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
         </body>
         </html>`
       const optString = minify(htmlString, {
-        // collapseWhitespace: true,
-        // minifyJS: true,
+        collapseWhitespace: true,
+        minifyJS: true,
         removeComments: true
       });
       file.print(optString)
