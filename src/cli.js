@@ -49,6 +49,10 @@ const cli = meow(helpMsg, {
       type: 'string',
       alias: 'A'
     },
+    optimize: {
+      type: 'boolean',
+      default: false
+    }
   }
 })
 

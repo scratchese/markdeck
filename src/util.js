@@ -17,7 +17,13 @@ class Printer {
 
 
 const execute = (command, callback) => {
-  exec(command, function(error, stdout, stderr){ callback(stdout); });
+  exec(command, function(error, stdout, stderr){
+    if(error){
+      console.log('Error', error)
+    }else{
+      callback(stdout);
+    }
+  });
 };
 
 const rmrf = (file, callback) => {

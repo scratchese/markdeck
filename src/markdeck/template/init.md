@@ -33,7 +33,12 @@ $ npm i -g @amazingandyyy/markdeck
 $ deck init
 $ deck
 ```
+---
 
 Open Source On
 
 # [Github](https://github.com/amazingandyyy/markdeck)
+
+---
+
+## Thank you

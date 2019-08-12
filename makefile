@@ -8,8 +8,10 @@ build:
 	$(NPM) run build-by-makefile
 	cp -rf $(SRC)/markdeck $(OUTPUT)
 
-install-local: build
-	$(NPM) rm -g markdeck && $(NPM) i -g
+upgrade: build
+	$(NPM) rm -g @amazingandyyy/markdeck
+	$(NPM) i -g
+	deck --version
 
 serve:
 	$(NPM) run serve
@@ -20,7 +22,7 @@ deploy: bump build
 	# git add .
 	# git commit -m "deployed and update demo"
 	# git push origin master
-	npm i -g @amazingandyyy/markdeck@latest
+	$(NPM) i -g @amazingandyyy/markdeck@latest
 	deck --version
 
 bump:

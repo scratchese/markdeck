@@ -2,8 +2,8 @@ import staticServer from 'node-static';
 import http from 'http';
 import { exec } from 'child_process';
 
-const devServer = (srcFolder) => {
-  const server = new(staticServer.Server)(srcFolder);
+const devServer = (targetDir) => {
+  const server = new(staticServer.Server)(targetDir);
   return {
     start: (port) => {
       const app = http.createServer((req,res) => {
@@ -11,11 +11,11 @@ const devServer = (srcFolder) => {
           server.serve(req, res);
         }).resume()
       }).listen(port, () => {
-        console.log(`[server] Serving ${srcFolder}/ on http://localhost:${port}`)
+        console.log(`[server] Serving ${targetDir}/ on http://localhost:${port}`)
       });
       process.on('SIGINT', () => {
-        exec(`rm -rf ${srcFolder}`);
-        console.log(`\n[server] Stop serving ${srcFolder}/`)
+        exec(`rm -rf ${targetDir}`);
+        console.log(`\n[server] Stop serving ${targetDir}/`)
         process.exit();
       })
     },

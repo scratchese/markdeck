@@ -1,58 +1,11 @@
-import {exec} from 'child_process';
 import path from 'path';
 import fs from 'fs';
 import showdown from 'showdown';
 import { readFile } from 'fs';
-import {Printer, execute, rmrf} from './util';
-import {CUSTOMIZE_CSS} from './default';
+import {Printer} from '../util';
+import {CUSTOMIZE_CSS} from '../default';
 
-const exportFnc = (flags) => {
-  flags.init = (flags.init==false)?false:true;
-  execute(`ls -1 ${flags.src}/*.md`, psnttns=>{
-    const srcMarkdown = psnttns.split('\n').map((psnttn=>psnttn.substring(psnttn.lastIndexOf('/')+1)))
-    srcMarkdown.pop()
-    exportPresentations({flags, srcMarkdown});
-  })
-}
-
-const exportPresentations = ({flags, srcMarkdown}) => {
-  const finish = srcMarkdown.length;
-  srcMarkdown.forEach((markdown, i) =>{
-    const callback = (i+1==finish)?flags.callback:null;
-    exportPresentation({flags, markdown, callback});
-  });
-}
-
-const exportPresentation = ({flags, markdown, callback}) => {
-  const filename = markdown.replace('.md', '').replace(/ /g,"_").toLowerCase();
-  const outputDeckPath = path.join(flags.out, 'deck');
-  const outputPath = path.join(flags.out, 'deck', filename);
-  const templtPath = path.join(__dirname, 'markdeck');
-  rmrf(outputDeckPath, () => {
-    execute(`mkdir -p ${outputPath}/markdeck`, ()=>{
-      flags.init && console.log(`created ${outputPath}`)
-      execute(`cp -rf ${templtPath}/themes/${flags.theme}.css ${outputPath}/markdeck/`, ()=>{
-        flags.init && console.log(`created ${outputPath}/markdeck/${flags.theme}.css`)
-        execute(`cp -rf ${flags.src}/${filename}.css ${outputPath}/markdeck/${CUSTOMIZE_CSS}`, ()=>{
-          flags.init && console.log(`created ${outputPath}/markdeck/${CUSTOMIZE_CSS}`)
-          execute(`cp -rf ${templtPath}/lib.js ${outputPath}/markdeck/`, ()=>{
-            flags.init && console.log(`created ${outputPath}/markdeck/lib.js`)
-            if(flags.assets){
-              execute(`cp -rf ${flags.src}/${flags.assets} ${outputPath}/`, ()=>{
-                flags.init && console.log(`created ${outputPath}/${flags.assets}`)
-                exportHTML({flags, outputPath, markdown, callback})
-              })
-            }else{
-              exportHTML({flags, outputPath, markdown, callback})
-            }
-          })
-        })
-      })
-    })
-  })
-}
-
-const exportHTML = ({flags, outputPath, markdown, callback}) => {
+const compiler = ({flags, outputPath, markdown, callback}) =>{
   const converter = new showdown.Converter()
   markdown = path.join(flags.src, markdown)
   fs.readFile(markdown, 'utf8', (err, data) => {
@@ -121,5 +74,4 @@ const exportHTML = ({flags, outputPath, markdown, callback}) => {
   });
 }
 
-export { exportPresentation };
-export default exportFnc;
+export default compiler;
