@@ -4,7 +4,7 @@ lib
 src/.*
 npm-debug.log
 .cache.*
-demo/docs
+demo
 demo/package-lock.json
 .cache
 playground
