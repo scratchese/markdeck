@@ -52,7 +52,6 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
       const productionRootURL = flags.url?flags.url:'https://github.com/amazingandyyy/markdeck/tree/master/demo/docs';
       const productionImageURLPending = path.join(productionRootURL.replace('https://github.com/', 'raw.githubusercontent.com/').replace('/tree', ''), outputPath ,'meta', `${fileNamePure}.jpeg?${Date.now()}`);
       const productionImageURL = 'https://' + productionImageURLPending.replace('/docs/docs/', '/docs/')
-      console.log(productionImageURL)
       const title = `${filename.charAt(0).toUpperCase() + filename.slice(1)} | ${(fileNamePure=='index')?'Welcome':fileNamePure}`;
       const htmlString = `<html lang="en">
         <head>
@@ -73,7 +72,7 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
           <meta name="twitter:site" content="@markdeck"></meta>
           <meta name="twitter:creator" content="@markdeck"></meta>
           <meta property="og:image:width" content="640"></meta>
-          <meta property="og:image:height" content="640"></meta>
+          <meta property="og:image:height" content="320"></meta>
           <meta property="og:description" content="${data}"></meta>
           <meta name="twitter:description"></meta>
           <link rel='stylesheet' type='text/css' href='markdeck/${flags.theme}.css'>
