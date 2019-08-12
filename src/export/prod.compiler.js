@@ -59,26 +59,26 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
       const title = `${filename.charAt(0).toUpperCase() + filename.slice(1)} | ${(fileNamePure=='index')?'Welcome':fileNamePure}`;
       const htmlString = `<html lang="en">
         <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <meta name="referrer" content="no-referrer-when-downgrade">
+          <meta charset="utf-8"></meta>
+          <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+          <meta name="referrer" content="no-referrer-when-downgrade"></meta>
           <title>${title}</title>
-          <meta property="og:type" content="article">
-          <meta property="og:title" content="${title}">
-          <meta property="og:site_name" content="markdeck">
-          <meta property="og:image" content="${productionImageURL}">
-          <meta property="og:image:type" content="image/png" />
-          <meta name="twitter:card" content="summary_large_image">
-          <meta name="twitter:image" content="${productionImageURL}">
-          <meta name="twitter:title" content="${title}">
-          <meta property="article:modified_time" content="${Date().toLocaleString()}">
-          <meta property="article:publisher" content="https://amazingandyyy.com/markdeck">
-          <meta name="twitter:site" content="@markdeck">
-          <meta name="twitter:creator" content="@markdeck">
-          <meta property="og:image:width" content="640">
-          <meta property="og:image:height" content="640">
-          <meta property="og:description" content="${data}">
-          <meta name="twitter:description">
+          <meta property="og:type" content="article"></meta>
+          <meta property="og:title" content="${title}"></meta>
+          <meta property="og:site_name" content="markdeck"></meta>
+          <meta property="og:image" content="${productionImageURL}"></meta>
+          <meta property="og:image:type" content="image/png" /></meta>
+          <meta name="twitter:card" content="summary_large_image"></meta>
+          <meta name="twitter:image" content="${productionImageURL}"></meta>
+          <meta name="twitter:title" content="${title}"></meta>
+          <meta property="article:modified_time" content="${Date().toLocaleString()}"></meta>
+          <meta property="article:publisher" content="https://amazingandyyy.com/markdeck"></meta>
+          <meta name="twitter:site" content="@markdeck"></meta>
+          <meta name="twitter:creator" content="@markdeck"></meta>
+          <meta property="og:image:width" content="640"></meta>
+          <meta property="og:image:height" content="640"></meta>
+          <meta property="og:description" content="${data}"></meta>
+          <meta name="twitter:description"></meta>
           <link rel='stylesheet' type='text/css' href='markdeck/${flags.theme}.css'>
           <link rel='stylesheet' type='text/css' href='markdeck/${CUSTOMIZE_CSS}'>
 
