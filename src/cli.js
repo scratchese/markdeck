@@ -20,7 +20,7 @@ Options
 Examples
 $ deck --port 4321
 $ deck export
-$ deck export --src ./my_deck --output ./ready
+$ deck export --src ./my_deck --out ./ready
 `
 
 const cli = meow(helpMsg, {

@@ -3,11 +3,11 @@ import exportFnc from './export';
 import devServer from './dev-server';
 
 const callback = () => {
-  console.log('[deck] files are up to date')
+  console.log('[deck] files updated, deck is up to date')
 };
 
 const devFnc = (flags) => {
-  flags.out = '.cache.deck';
+  flags.out = flags.out?flags.out:'.cache.deck';
   exportFnc({init: true, callback, ...flags})
   devServer(flags.out).start(flags.port);
   fs.watch(flags.src, (event, filename)=>{

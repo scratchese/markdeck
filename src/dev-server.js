@@ -15,7 +15,7 @@ const devServer = (srcFolder) => {
       });
       process.on('SIGINT', () => {
         exec(`rm -rf ${srcFolder}`);
-        console.log(`[server] Stop serving ${srcFolder}/`)
+        console.log(`\n[server] Stop serving ${srcFolder}/`)
         process.exit();
       })
     },
