@@ -49,8 +49,12 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
       const outputHTMLPath = path.join(outputPath, `${htmlFileName}`)
       flags.init && console.log(`created ${outputHTMLPath}`)
       const file = new Printer(outputHTMLPath)
+      // 'https://raw.githubusercontent.com/amazingandyyy/markdeck/master/demo/docs/deck/presentation/meta/index.jpeg'
+      // 'https:/github.com/amazingandyyy/markdeck/raw/master/demo/docs/deck/presentation/meta/index.jpeg'
+      // 'https://github.com/amazingandyyy/markdeck/master/demo/docs'
+      // 'https://github.com/amazingandyyy/markdeck/tree/master/demo/docs'
       const productionRootURL = flags.url?flags.url:'https://github.com/amazingandyyy/markdeck/tree/master/demo/docs';
-      const productionImageURLPending = path.join(productionRootURL.replace('/tree/', '/raw/'), outputPath ,'meta', `${fileNamePure}.jpeg`);
+      const productionImageURLPending = path.join(productionRootURL.replace('https://github.com/', 'https://raw.githubusercontent.com/').replace('/tree/', '/'), outputPath ,'meta', `${fileNamePure}.jpeg`);
       const productionImageURL = productionImageURLPending.replace('/docs/docs/', '/docs/')
       const title = `${filename.charAt(0).toUpperCase() + filename.slice(1)} | ${(fileNamePure=='index')?'Welcome':fileNamePure}`;
       const htmlString = `<html lang="en">
