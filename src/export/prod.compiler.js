@@ -75,6 +75,7 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
           <meta name="twitter:description" content="${data}">
           <link rel='stylesheet' type='text/css' href='markdeck/${flags.theme}.css'>
           <link rel='stylesheet' type='text/css' href='markdeck/${CUSTOMIZE_CSS}'>
+
           <script type="application/javascript">
             function toggleFullScreen() {
               if (!document.fullscreenElement) {
