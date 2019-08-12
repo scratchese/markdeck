@@ -52,12 +52,13 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
       const productionImageURLPending = path.join(productionRootURL.replace('/tree/', '/blob/'), outputPath ,'meta', `${fileNamePure}.png`) + `?raw=true`
       const productionImageURL = productionImageURLPending.replace('/docs/docs/', '/docs/')
       console.log('productionImageURL', productionImageURL)
-      const title = `${filename} | ${(fileNamePure=='index')?'cover':fileNamePure}`;
+      const title = `${filename} | ${(fileNamePure=='index')?'':fileNamePure}`;
       const htmlString = `<html lang="en">
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <meta name="referrer" content="no-referrer-when-downgrade">
+          <title>${title}</title>
           <meta property="og:type" content="article">
           <meta property="og:title" content="${title}">
           <meta property="og:site_name" content="markdeck">
@@ -73,7 +74,6 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
           <meta property="og:image:height" content="540">
           <meta property="og:description" content="${data}">
           <meta name="twitter:description" content="${data}">
-          <title>${title}</title>
           <link rel='stylesheet' type='text/css' href='markdeck/${flags.theme}.css'>
           <link rel='stylesheet' type='text/css' href='markdeck/${CUSTOMIZE_CSS}'>
           <script type="application/javascript">
