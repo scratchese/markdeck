@@ -49,10 +49,8 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
       flags.init && console.log(`created ${outputHTMLPath}`)
       const file = new Printer(outputHTMLPath)
       const productionRootURL = flags.url?flags.url:'https://github.com/amazingandyyy/markdeck/tree/master/demo/docs';
-      const productionImageURLPending = path.join(productionRootURL.replace('/tree/', '/blob/'), outputPath ,'meta', `${fileNamePure}.png`) + `?raw=true`
+      const productionImageURLPending = path.join(productionRootURL.replace('/tree/', '/raw/'), outputPath ,'meta', `${fileNamePure}.png`);
       const productionImageURL = productionImageURLPending.replace('/docs/docs/', '/docs/')
-      console.log('productionImageURL', productionImageURL)
-      // const title = `${filename} | ${(fileNamePure=='index')?'':fileNamePure}`;
       const title = `${filename.charAt(0).toUpperCase() + filename.slice(1)} | ${(fileNamePure=='index')?'Welcome':fileNamePure}`;
       const htmlString = `<html lang="en">
         <head>
@@ -73,8 +71,8 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
           <meta name="twitter:site" content="@markdeck">
           <meta property="og:image:width" content="960">
           <meta property="og:image:height" content="540">
-          <meta property="og:description" content="${data}">
-          <meta name="twitter:description" content="${data}">
+          <!-- <meta property="og:description" content="${data}"> -->
+          <!-- <meta name="twitter:description" content="${data}"> -->
           <link rel='stylesheet' type='text/css' href='markdeck/${flags.theme}.css'>
           <link rel='stylesheet' type='text/css' href='markdeck/${CUSTOMIZE_CSS}'>
           <script type="application/javascript">
