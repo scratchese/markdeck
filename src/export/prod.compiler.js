@@ -60,19 +60,19 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
           <meta name="referrer" content="no-referrer-when-downgrade">
           <meta property="og:type" content="article">
           <meta property="og:title" content="${title}">
-          <meta property="og:description" content="${data}">
           <meta property="og:site_name" content="markdeck">
-          <meta property="og:image" content="meta/${productionImageURL}">
+          <meta property="og:image" content="${productionImageURL}">
           <meta property="og:image:type" content="image/png" />
-          <meta name="twitter:description" content="${data}">
           <meta name="twitter:card" content="summary_large_image">
-          <meta name="twitter:image" content="meta/${productionImageURL}">
+          <meta name="twitter:image" content="${productionImageURL}">
           <meta name="twitter:title" content="${title}">
           <meta property="article:modified_time" content="${Date().toLocaleString()}">
           <meta property="article:publisher" content="https://amazingandyyy.com/markdeck">
           <meta name="twitter:site" content="@markdeck">
           <meta property="og:image:width" content="960">
           <meta property="og:image:height" content="540">
+          <meta property="og:description" content="${data}">
+          <meta name="twitter:description" content="${data}">
           <title>${title}</title>
           <link rel='stylesheet' type='text/css' href='markdeck/${flags.theme}.css'>
           <link rel='stylesheet' type='text/css' href='markdeck/${CUSTOMIZE_CSS}'>
