@@ -52,7 +52,8 @@ const compiler = ({flags, outputPath, filename, markdown, callback}) => {
       const productionImageURLPending = path.join(productionRootURL.replace('/tree/', '/blob/'), outputPath ,'meta', `${fileNamePure}.png`) + `?raw=true`
       const productionImageURL = productionImageURLPending.replace('/docs/docs/', '/docs/')
       console.log('productionImageURL', productionImageURL)
-      const title = `${filename} | ${(fileNamePure=='index')?'':fileNamePure}`;
+      // const title = `${filename} | ${(fileNamePure=='index')?'':fileNamePure}`;
+      const title = `${filename.charAt(0).toUpperCase() + filename.slice(1)} | ${(fileNamePure=='index')?'Welcome':fileNamePure}`;
       const htmlString = `<html lang="en">
         <head>
           <meta charset="utf-8">
