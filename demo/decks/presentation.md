@@ -20,7 +20,7 @@ animations or layouts
 
 # Andy
 
-![image](https://user-images.githubusercontent.com/7886068/62841474-4f4df400-bc5d-11e9-8352-6cd927e8f40d.jpg)
+![image](images/profile.jpg)
 
 [Github](https://github.com/amazingandyyy) *or* [Website](https://amazingandyyy.com)
 

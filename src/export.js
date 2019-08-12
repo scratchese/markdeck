@@ -82,7 +82,7 @@ const exportHTML = ({flags, outputPath, markdown, callback}) => {
                 }
               }
             }
-            const getCurrentPath = () => {
+            function getCurrentPath() {
               if(window.location){
                 const currentPath = window.location.href.split('/')
                 currentPath.pop()
