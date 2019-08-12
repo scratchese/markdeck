@@ -57,9 +57,10 @@ h2 {
 }
 
 
-pre {
+/* pre {
     padding: 10px;
     width: 100%;
+    margin: 10px;
 }
 
 code {
@@ -74,7 +75,7 @@ code {
     box-shadow: 0px 0px 50px rgba(0,0,0,0.2);
     border-left: 5px solid white;
     overflow: scroll;
-}
+} */
 
 #btn-container {
     position: fixed;
