@@ -9,11 +9,25 @@
 - reduce bundle size
 - launch on product hunt
 
+## Markdeck projet ultimate goal
+
+```
+github.com/markdeck-project
+  └── @markdeck/core: abstract markdown into multiple htmls
+  └── @markdeck/bundler: like parcel build
+  └── @markdeck/serve: like next
+  └── @markdeck/now: deploy with ZEIT now serverless
+  └── @markdeck/HMML: md -> .hmml (Hypermarkdown markup language)
+  └── @markdeck/theme: more themes(vanilla, uber, airbnb)
+  └── @markdeck/marketplace: a market place for themes
+  └── @markdeck/studio: a online WYSIWYG editor
+```
+
 ## Suggestions
 
 - [PR](https://github.com/amazingandyyy/markdeck/pulls)/[issues](https://github.com/amazingandyyy/markdeck/issues) are highly welcome
 
-## CLI
+## more intuitive CLI
 
 ### Babel command
 

@@ -2,7 +2,8 @@
 
 ## Try it in less than 3 seconds
 
-```terminal
-npm i
-deck
+```shell
+$ npm i
+$ deck --assets images
+$ deck
 ```
