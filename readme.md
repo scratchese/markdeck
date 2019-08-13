@@ -17,10 +17,7 @@ https://www.amazingandyyy.com/markdeck/demo/docs/deck/presentation
 - blazing fast
 - no tutorials, only [demo](https://github.com/amazingandyyy/markdeck/tree/master/demo)
 - force you to focus on content, without worried about fancy animations or layouts
-
-## Perfect Preview on social network(fb/twitter/slack...etc)
-
-![tweet](https://user-images.githubusercontent.com/7886068/62908651-f69a5c00-bd2d-11e9-8cd8-3b546dc2f13e.png)
+- [perfect preview](https://github.com/amazingandyyy/markdeck/issues/6) on social network(fb/twitter/slack...etc)
 
 
 ## Usage
