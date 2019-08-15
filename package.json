@@ -1,0 +1,52 @@
+{
+  "name": "@amazingandyyy/markdeck",
+  "version": "0.2.13",
+  "description": "Build SEO-ready slides with zero configuration.",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "bin": {
+    "deck": "./lib/cli.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "jest && npm run style",
+    "test:watch": "jest --watchAll",
+    "build-by-makefile": "babel src -d lib",
+    "dev": "babel-watch src/dev.js",
+    "style": "eslint --fix src/",
+    "prepush": "npm run test",
+    "present": "deck",
+    "export-present": "deck export"
+  },
+  "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amazingandyyy/markdeck"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-jest": "^24.8.0",
+    "babel-watch": "^7.0.0",
+    "eslint": "^5.16.0",
+    "husky": "^2.7.0",
+    "jest": "^24.8.0",
+    "serve": "^11.1.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "html-minifier": "^4.0.0",
+    "meow": "^5.0.0",
+    "node-static": "^0.7.11",
+    "puppeteer": "^1.19.0",
+    "puppeteer-core": "^1.19.0",
+    "resolve": "^1.12.0",
+    "showdown": "^1.9.0"
+  }
+}

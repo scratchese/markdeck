@@ -1,0 +1,13 @@
+{
+  "name": "demo",
+  "scripts": {
+    "deck": "deck",
+    "deck-export": "deck export"
+  },
+  "dependencies": {
+    "@amazingandyyy/markdeck": "0.0.18"
+  },
+  "markdeck": {
+    "url": "https://github.com/amazingandyyy/markdeck/tree/master/demo/docs"
+  }
+}
