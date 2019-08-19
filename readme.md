@@ -6,6 +6,18 @@
 Build SEO-ready slides with zero configuration.
 </p>
 
+<p align="center">
+   <a href="https://github.com/amazingandyyy/markdeck/blob/master/LICENSE">
+      <img src="https://img.shields.io/badge/License-MIT-green.svg" />
+   </a>
+   <a href="https://circleci.com/gh/amazingandyyy/markdeck">
+      <img src="https://circleci.com/gh/amazingandyyy/markdeck.svg?style=svg" />
+   </a>
+   <a href="https://www.npmjs.com/package/@amazingandyyy/markdeck">
+      <img src="https://badge.fury.io/js/%40amazingandyyy%2Fmarkdeck.svg" />
+   </a>
+</p>
+
 Demo:
 
 https://amazingandyyy.com/markdeck/demo/docs/deck/presentation
